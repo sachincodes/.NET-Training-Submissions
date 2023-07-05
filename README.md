@@ -1,2 +1,2 @@
 # .NET-Training-Submissions
-This is a repository for all the .NET training submissions.
+This repository serves as a collection for all the submissions made during the .NET training.
