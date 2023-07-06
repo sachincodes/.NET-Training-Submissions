@@ -1,0 +1,18 @@
+﻿@model shivamTask.Models.ViewModel.AddEmployee
+<div class="text-center">
+    <h1>Add Employee</h1>
+    <div class="form-group">
+        <form  asp-action="AddEmployee" asp-controller="Employee" method="post" class="align-center">
+
+         
+            <input class="form-control mb-3" type="text" asp-for="Name" placeholder="Enter Name" required/>
+            
+            <input class="form-control mb-3" type="number" asp-for="AdharNo" placeholder="Enter AdharNumber" required />
+         
+            <input class="form-control mb-3" type="text" asp-for="Role" placeholder="Enter Role" required />
+         
+            <input class="form-control mb-3" type="email" asp-for="Email" placeholder="Enter Email" required />
+            <input type="submit"  class="btn btn-success"/>
+        </form>
+    </div>
+</div>

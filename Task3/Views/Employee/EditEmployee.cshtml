@@ -1,0 +1,23 @@
+﻿
+@model shivamTask.Models.Domain.Employee
+
+@{
+}
+<div class="text-center">
+    <h1>Edit Employee</h1>
+    <div>
+        <form asp-action="UpdateEmployee" asp-controller="Employee" method="post" class="align-center">
+            <label>Id</label>
+            <input class="form-control mb-3"  readonly asp-for="Id" />
+            <label>Name</label>
+            <input class="form-control mb-3"  type="text" required asp-for="Name" />
+            <label>AdharNo.</label>
+            <input class="form-control mb-3" type="number"  required asp-for="AdharNo" />
+            <label>Role</label>
+            <input class="form-control mb-3" type="text"  required asp-for="Role" />
+            <label>Email</label>
+            <input class="form-control mb-3" type="email" asp-for="Email" required />
+            <input type="submit" value="Update" class="btn btn-success"/>
+        </form>
+    </div>
+</div>

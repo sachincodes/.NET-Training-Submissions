@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+}
+@model List<shivamTask.Models.ViewModel.AddEmployee> 
+
+<div class="text-center">
+    Welcome To My Employee Website
+      <a></a> <br />
+    <button class="btn btn-primary ">
+        <a class="text-light" asp-action="Add" asp-controller="Employee">Add Employee</a>
+    </button>
+
+    
+     <br />
+
+     <div class="text-center">
+
+        @if (Model == null || Model.Count==0)
+        {
+          <h3>No Employees Create some employees!</h3>
+        }
+        else {
+         <h1>All My employees</h1>
+        @foreach(var record in Model)
+        {   <div class="text-center bg-success text-white mb-2">
+            <h1>Name: @record.Name       </h1>
+            <h2>Email: @record.Email</h2>
+            <h3>AdharNo: @record.AdharNo</h3>
+            <h4>Role: @record.Role</h4>
+                <button  class="btn btn-primary text-light">   <a asp-action="EditEmployee" asp-controller="Employee" asp-route-id="@record.Id"> <p class="text-light">Edit</p></a>  </button>
+
+                    <button class="btn btn-danger">     <a asp-action="DeleteEmployee" asp-controller="Employee" asp-route-id="@record.Id"> <p class="text-light">Delete</p></a></button>
+ </div>
+        }
+        }
+      
+    </div>
+</div>
