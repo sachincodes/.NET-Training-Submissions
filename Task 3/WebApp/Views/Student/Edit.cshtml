@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>@ViewBag.Title</h2>
+<h2 class="text-danger">@ViewBag.ErrorMessage</h2>
+<div class="container">
+    @using (Html.BeginForm("Edit", "Student", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-md-6">
+                @Html.Label("Id:")
+                @Html.TextBox("Id",null,null,new{@class="form-control",@type="number",@disabled=true})
+                @Html.Hidden("Id")
+            </div>
+            <div class="col-md-6">
+                @Html.Label("Name:")
+                @Html.TextBox("Name",@ViewBag.Name,null,new{@class="form-control"})
+                @Html.Hidden("Name")
+            </div>
+        </div>
+        <div class="row mt-5">
+            <input type="submit" value="Save" class="btn btn-success w-25 text-center" />
+        </div>
+    }
+
+</div>
+
+

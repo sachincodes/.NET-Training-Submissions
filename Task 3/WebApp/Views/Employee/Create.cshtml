@@ -1,0 +1,29 @@
+﻿@model WebApp.Models.EmployeeViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>@ViewBag.Title</h2>
+<h2 class="text-danger">@ViewBag.ErrorMessage</h2>
+<div class="container">
+    @using (Html.BeginForm("Create", "Employee", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-md-6">
+                @Html.LabelFor(x=>x.Name)
+                @Html.TextBoxFor(x=>x.Name,new{@class="form-control"})
+                @Html.ValidationMessageFor(m => m.Name,null,new{@class="text-danger"})
+            </div>
+            <div class="col-md-6">
+                @Html.LabelFor(x=>x.Email)
+                @Html.TextBoxFor(x=>x.Email,new{@class="form-control",@type="email"})
+                @Html.ValidationMessageFor(m => m.Email,null,new{@class="text-danger"})
+            </div>
+        </div>
+        <div class="row mt-5">
+            <input type="submit" value="Save" class="btn btn-success w-25 text-center" />
+        </div>
+    }
+
+</div>

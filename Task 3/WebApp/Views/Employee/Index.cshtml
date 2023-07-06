@@ -1,0 +1,38 @@
+﻿@model Dictionary<int, EmployeeViewModel>
+
+<h2></h2>
+
+
+
+<div class="container">
+    <div class="row">
+        @Html.ActionLink("Create","Create","Employee");
+        <div class="table table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead style="background-color:cadetblue">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td scope="row">@item.Key</td>
+                            <td>@item.Value.Name</td>
+                            <td>@item.Value.Email</td>
+                            <td>@Html.ActionLink("Edit","Edit","Employee",new{Id=@item.Key}) | @Html.ActionLink("Delete","Delete","Employee",new{Id=@item.Key});</td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
