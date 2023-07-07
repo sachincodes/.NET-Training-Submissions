@@ -50,7 +50,6 @@ namespace task3.Controllers
                 {
                     return View(employees[id]);
                 }
-
                 return RedirectToAction("Index");
             }
             catch
