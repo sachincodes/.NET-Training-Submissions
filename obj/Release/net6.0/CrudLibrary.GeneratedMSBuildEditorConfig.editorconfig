@@ -16,12 +16,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Sumit Panwar\source\.NET-Training-Submissions
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/Employee/AlreadyExists.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWxyZWFkeUV4aXN0cy5jc2h0bWw=
+[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/Employee/AddEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWRkRW1wbG95ZWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/Employee/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQ3JlYXRlLmNzaHRtbA==
+[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/Employee/AlreadyExists.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWxyZWFkeUV4aXN0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/Employee/Delete.cshtml]
@@ -32,12 +32,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/Employee/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRWRpdC5jc2h0bWw=
+[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/Employee/EditEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRWRpdEVtcGxveWVlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/Employee/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
+[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/Employee/EmployeeList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRW1wbG95ZWVMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/Home/Index.cshtml]

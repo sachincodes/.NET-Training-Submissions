@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<CrudLibrary.Models.EmployeeModel>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Employee List";
 }
 
-<h1>Index</h1>
+<h2>Employee List</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="AddEmployee">Add New Employee</a>
 </p>
 <table class="table">
     <thead>
@@ -43,7 +43,7 @@
                 @Html.DisplayFor(modelItem => item.Age)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new {EmpId = item.EmpId}) |
+                @Html.ActionLink("Edit", "EditEmployee", new {EmpId = item.EmpId}) |
                 @Html.ActionLink("Details", "Details", new {EmpId = item.EmpId}) |
                 @Html.ActionLink("Delete", "Delete", new {EmpId = item.EmpId})
             </td>

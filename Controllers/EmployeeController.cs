@@ -8,7 +8,7 @@ namespace CrudLibrary.Controllers
     public class EmployeeController : Controller
     {
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult EmployeeList()
         {
             List<EmployeeModel> employees = new List<EmployeeModel>();
 
@@ -16,11 +16,12 @@ namespace CrudLibrary.Controllers
             {
                 employees.Add(emp.Value);
             }
+
             return View(employees);
         }
 
         [HttpGet]
-        public IActionResult Create()
+        public IActionResult AddEmployee()
         {
             return View();
         }
@@ -32,18 +33,18 @@ namespace CrudLibrary.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(EmployeeModel emp)
+        public ActionResult AddEmployee(EmployeeModel emp)
         {
             if(EmployeeDictionary.EmployeeData.ContainsKey(emp.EmpId))
             {
                 return RedirectToAction("AlreadyExists");
             }
             EmployeeDictionary.EmployeeData.Add(emp.EmpId, emp);
-            return RedirectToAction("Index");
+            return RedirectToAction("EmployeeList");
         }
 
         [HttpGet]
-        public IActionResult Edit(int EmpId)
+        public IActionResult EditEmployee(int EmpId)
         {
             EmployeeModel emp = EmployeeDictionary.EmployeeData[EmpId];
             return View(emp);
@@ -53,7 +54,8 @@ namespace CrudLibrary.Controllers
         public ActionResult EditEmployee(EmployeeModel emp)
         {
             EmployeeDictionary.EmployeeData[emp.EmpId] = emp;
-            return RedirectToAction("Index");
+            return RedirectToAction("EmployeeList");
+
         }
 
         [HttpGet]
@@ -72,7 +74,7 @@ namespace CrudLibrary.Controllers
         public ActionResult RemoveEmployee(int EmpId)
         {
             EmployeeDictionary.EmployeeData.Remove(EmpId);
-            return RedirectToAction("Index");
+            return RedirectToAction("EmployeeList");
         }
     }
 }

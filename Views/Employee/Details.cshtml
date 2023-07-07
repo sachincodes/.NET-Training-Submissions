@@ -40,6 +40,6 @@
     @{
         int EmpId = Model.EmpId;
     }
-    @Html.ActionLink("Edit", "Edit", new {EmpId = EmpId }) |
-    <a asp-action="Index">Back to List</a>
+    @Html.ActionLink("Edit", "EditEmployee", new {EmpId = EmpId }) |
+    <a asp-action="EmployeeList">Back to List</a>
 </div>
