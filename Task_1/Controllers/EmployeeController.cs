@@ -64,7 +64,7 @@ namespace CrudLibrary.Controllers
             return View(EmployeeDictionary.EmployeeData[EmpId]);
         }
 
-        [HttpGet]
+        [HttpGet] 
         public IActionResult Delete(int EmpId)
         {
             return View(EmployeeDictionary.EmployeeData[EmpId]);
