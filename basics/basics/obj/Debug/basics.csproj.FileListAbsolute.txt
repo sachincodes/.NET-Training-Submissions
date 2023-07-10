@@ -1,0 +1,8 @@
+C:\Users\Simran Kaur\source\repos\basics\basics\bin\Debug\basics.exe.config
+C:\Users\Simran Kaur\source\repos\basics\basics\bin\Debug\basics.exe
+C:\Users\Simran Kaur\source\repos\basics\basics\bin\Debug\basics.pdb
+C:\Users\Simran Kaur\source\repos\basics\basics\obj\Debug\basics.csproj.AssemblyReference.cache
+C:\Users\Simran Kaur\source\repos\basics\basics\obj\Debug\basics.csproj.SuggestedBindingRedirects.cache
+C:\Users\Simran Kaur\source\repos\basics\basics\obj\Debug\basics.csproj.CoreCompileInputs.cache
+C:\Users\Simran Kaur\source\repos\basics\basics\obj\Debug\basics.exe
+C:\Users\Simran Kaur\source\repos\basics\basics\obj\Debug\basics.pdb
