@@ -9,61 +9,61 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CrudLibrary
 build_property.RootNamespace = CrudLibrary
-build_property.ProjectDir = C:\Users\Sumit Panwar\source\.NET-Training-Submissions\
+build_property.ProjectDir = C:\Users\Sumit Panwar\source\.NET-Training-Submissions\Task_1\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Sumit Panwar\source\.NET-Training-Submissions
+build_property.MSBuildProjectDirectory = C:\Users\Sumit Panwar\source\.NET-Training-Submissions\Task_1
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/Employee/AlreadyExists.cshtml]
+[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Task_1/Views/Employee/AddEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWRkRW1wbG95ZWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Task_1/Views/Employee/AlreadyExists.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWxyZWFkeUV4aXN0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/Employee/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/Employee/Delete.cshtml]
+[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Task_1/Views/Employee/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/Employee/Details.cshtml]
+[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Task_1/Views/Employee/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/Employee/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRWRpdC5jc2h0bWw=
+[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Task_1/Views/Employee/EditEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRWRpdEVtcGxveWVlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/Employee/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
+[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Task_1/Views/Employee/EmployeeList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRW1wbG95ZWVMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/Home/Index.cshtml]
+[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Task_1/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/Home/Privacy.cshtml]
+[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Task_1/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/Shared/Error.cshtml]
+[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Task_1/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Task_1/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/_ViewImports.cshtml]
+[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Task_1/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/_ViewStart.cshtml]
+[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Task_1/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Views/Shared/_Layout.cshtml]
+[C:/Users/Sumit Panwar/source/.NET-Training-Submissions/Task_1/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-rlkw8r50l0
