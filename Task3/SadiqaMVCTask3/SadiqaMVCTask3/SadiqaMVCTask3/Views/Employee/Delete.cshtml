@@ -1,0 +1,74 @@
+﻿@model Employee
+
+<h2>Delete Employee</h2>
+
+
+<div class="card">
+
+    <div class="card-header bg-secondary text-white">
+        <h4><strong>Are you sure you want to delete<span class="text-danger"> @Model.EmployeeFirstName </span>employee?</strong></h4>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-2">
+                <strong>Employee ID:</strong>
+            </div>
+            <div class="col-3">
+                @Model.EmployeeId
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <strong>Name:</strong>
+            </div>
+            <div class="col-4">
+                @Model.EmployeeFirstName
+           
+                @Model.EmployeeLastName
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <strong> Date of Birth:</strong>
+            </div>
+
+            <div class="col-3">
+                @Model.DateOfBirth
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <strong> Contact No:</strong>
+            </div>
+            <div class="col-3">
+                @Model.ContactNo
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <strong>Department:</strong>
+            </div>
+            <div class="col-3">
+                @Model.Department
+            </div>
+        </div>
+        <div class="row my-2">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="col-4 offset-1">
+                    
+                    <a asp-action="Index" class="btn btn-primary"><i class="fa fa-backward"></i> Cancel</a>
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                </div>
+            }
+           
+           
+        </div>
+
+    </div>
+ 
+</div>
+
+

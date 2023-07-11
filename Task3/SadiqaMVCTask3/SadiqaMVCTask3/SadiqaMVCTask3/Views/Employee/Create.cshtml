@@ -1,0 +1,80 @@
+﻿@model Employee
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="card">
+        <div class="card-header bg-secondary fw-bold">
+            <h4 class="text-white">Add New Employee</h4>
+        </div>
+
+        <div class="card-body">
+            <div class="row my-2">
+                <div class="col-4">
+                    <div class="form-group">
+                        <label asp-for="EmployeeFirstName"></label>
+                       <input asp-for="EmployeeFirstName" class="form-control"  />
+                       <span asp-validation-for="EmployeeFirstName" class="text-danger"></span>                     
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <label asp-for="EmployeeLastName"></label>
+                        <input asp-for="EmployeeLastName" class="form-control" />
+                        <span asp-validation-for="EmployeeLastName" class="text-danger"></span>
+                      
+                    </div>
+                </div>
+            </div>
+
+            <div class="row my-2">
+                <div class="col-4">
+                    <div class="form-group">
+                        <label asp-for="DateOfBirth"></label>
+                        <input asp-for="DateOfBirth" type="date" class="form-control" />
+                        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                       
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+
+                        <label asp-for="ContactNo"></label>
+                        <input type="tel" asp-for="ContactNo" class="form-control" />
+                        <span asp-validation-for="ContactNo" class="text-danger"></span>
+                    
+                        
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+
+                        <label asp-for="Department"></label>
+                        <input asp-for="Department" class="form-control" />
+                        <span asp-validation-for="Department" class="text-danger"></span>
+                     
+                    </div>
+                </div>
+            </div>
+
+            <div class="row my-2">
+                
+                <div class="offset-5 col-3">
+                           
+                  
+                    <a asp-action="Index" class="btn btn-primary"><i class="fa fa-backward"></i> Back</a>
+                    <button type="submit" class="btn btn-success">
+                        <i class="fa fa-save"></i>  Save
+                    </button>
+                </div>
+              
+            </div>
+        </div>
+    </div>   
+
+   
+}
+
