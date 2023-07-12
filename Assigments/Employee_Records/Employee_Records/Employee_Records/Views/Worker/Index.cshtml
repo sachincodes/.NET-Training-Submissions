@@ -1,0 +1,30 @@
+﻿@model List<Workers>
+
+<h2>Employee List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>WorkerId</th>
+        <th>WorkerName</th>
+        <th>Branch</th>
+        <th>Branch</th>
+        <th>City</th>
+    </tr>
+    @foreach (var workers in Model)
+    {
+        <tr>
+            <td>@workers.WorkerId</td>
+            <td>@workers.WorkerName</td>
+            <td>@workers.Branch</td>
+            <td>@workers.City</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = workers.WorkerId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = workers.WorkerId })
+            </td>
+        </tr>
+    }
+</table>

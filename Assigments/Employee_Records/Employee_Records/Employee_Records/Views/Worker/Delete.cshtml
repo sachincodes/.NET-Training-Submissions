@@ -1,0 +1,44 @@
+﻿@model Workers
+
+<h2>Delete Worker</h2>
+
+<h3>Are you sure you want to delete this employee?</h3>
+<div>
+    <h4>Worker Details:</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            WorkerId
+        </dt>
+        <dd>
+            @Model.WorkerId
+        </dd>
+        <dt>
+            Name
+        </dt>
+        <dd>
+            @Model.WorkerName
+        </dd>
+        <dt>
+            Branch
+        </dt>
+        <dd>
+            @Model.Branch
+        </dd>
+        <dt>
+            City
+        </dt>
+        <dd>
+            @Model.City
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.WorkerId)
+    <input type="submit" value="Delete" class="btn btn-danger" />
+   
+    @Html.ActionLink("Back to List", "Index")
+    }
+</div>

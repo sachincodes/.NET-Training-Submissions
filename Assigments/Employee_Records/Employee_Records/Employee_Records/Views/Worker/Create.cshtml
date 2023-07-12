@@ -1,0 +1,27 @@
+﻿@model Workers
+
+<h2>Create Worker</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="form-group">
+        @Html.LabelFor(model => model.WorkerName)
+        @Html.TextBoxFor(model => model.WorkerName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.WorkerName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Branch)
+        @Html.TextBoxFor(model => model.Branch, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Branch)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.City)
+        @Html.TextBoxFor(model => model.City, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.City)
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
