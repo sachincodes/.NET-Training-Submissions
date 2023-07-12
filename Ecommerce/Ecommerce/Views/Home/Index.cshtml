@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model  List<Ecommerce.Models.IProduct>
+<style>
+    .shoppingpage{
+         padding:50px; 
+         margin:10px; 
+         display:flex; 
+          flex-direction:row; 
+          justify-content:space-around ;
+
+
+    }
+    .productdiv{
+         border:1px solid black ; 
+          padding:5px; 
+          margin:10px; 
+    }
+
+</style>
+<div class="text-center">
+   <h1>Welcome to my Shopping Cart :)</h1>
+
+   <div class="shoppingpage"> @foreach(var p in Model)
+    {
+         <div class="productdiv">
+             
+             <h1>@p.Name</h1>
+             <h4>@p.Price</h4>
+             <p>@p.Description</p>
+
+                <a asp-action="AddtoCart" asp-controller="Product" asp-route-id="@p.Id"> <div class="btn btn-success">Add</div></a>
+            
+            </div>
+    }
+
+    </div>
+</div>
