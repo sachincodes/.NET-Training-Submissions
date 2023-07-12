@@ -8,7 +8,7 @@
         public string Description { get; set; }
         public  int  Price { get; set; }
 
-        public bool DiscountApplied { get; set; } 
+     public   bool DiscountApplied { get; set; } 
         public   int  Discount(); 
        
     }

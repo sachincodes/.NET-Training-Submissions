@@ -8,10 +8,10 @@
         public string Description { get; set; }
         public  int  Price { get; set; }
         public bool DiscountApplied { get; set; } = false;
-
+        private int discount = 10;
         public int  Discount()
         {
-            int d = (this.Price * 5) / 100; ;
+            int d = (this.Price * discount) / 100; ;
             this.Price = this.Price - d;
             return d;
         }
