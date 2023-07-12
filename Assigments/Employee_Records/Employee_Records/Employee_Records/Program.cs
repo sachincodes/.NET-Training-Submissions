@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IWorkerRepository, WorkerRepository>();
+builder.Services.AddSingleton<IWorkerRepository, WorkerRepository>();
 
 
 var app = builder.Build();
