@@ -1,0 +1,34 @@
+<table border="3">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Mobile</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="2">Abhishek Baliyan</td>
+            <td>15468134681354</td>
+            <td>abc</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Abhishek Baliyan</td>
+            <td>26</td>
+            <td>15468134681354</td>
+            <td>xyz</td>
+        </tr>
+        <tr>
+            <td>26</td>
+            <td>15468134681354</td>
+            <td>xyz</td>
+        </tr>
+        <tr>
+            <td>Abhishek Baliyan</td>
+            <td>26</td>
+            <td>15468134681354</td>
+            <td>xyz</td>
+        </tr>
+    </tbody>
+</table>
