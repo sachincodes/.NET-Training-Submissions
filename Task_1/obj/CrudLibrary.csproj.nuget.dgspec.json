@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Sumit Panwar\\source\\.NET-Training-Submissions\\CrudLibrary.csproj": {}
+    "C:\\Users\\Sumit Panwar\\source\\.NET-Training-Submissions\\Task_1\\CrudLibrary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Sumit Panwar\\source\\.NET-Training-Submissions\\CrudLibrary.csproj": {
+    "C:\\Users\\Sumit Panwar\\source\\.NET-Training-Submissions\\Task_1\\CrudLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sumit Panwar\\source\\.NET-Training-Submissions\\CrudLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\Sumit Panwar\\source\\.NET-Training-Submissions\\Task_1\\CrudLibrary.csproj",
         "projectName": "CrudLibrary",
-        "projectPath": "C:\\Users\\Sumit Panwar\\source\\.NET-Training-Submissions\\CrudLibrary.csproj",
+        "projectPath": "C:\\Users\\Sumit Panwar\\source\\.NET-Training-Submissions\\Task_1\\CrudLibrary.csproj",
         "packagesPath": "C:\\Users\\Sumit Panwar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sumit Panwar\\source\\.NET-Training-Submissions\\obj\\",
+        "outputPath": "C:\\Users\\Sumit Panwar\\source\\.NET-Training-Submissions\\Task_1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

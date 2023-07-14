@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Ecommerce.Models.ProductModel>
+@using static Ecommerce.Database.Cart;
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="text-align : center">Product List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductPrice)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductPrice)
+            </td>
+            <td>
+                    @if (CartItems.Contains(item))
+                    {
+                        @Html.Display("Item Added")
+                        
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Add To Cart", "AddedToCart", new {ProductId = item.ProductId })
+                    }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
