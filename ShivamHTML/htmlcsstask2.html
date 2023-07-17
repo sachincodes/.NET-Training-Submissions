@@ -28,10 +28,12 @@
         }
 
         .innerdiv {
+            position: relative;
             width: 700px;
             height: 300px;
             display: flex;
             justify-content: center;
+            padding: 10px;
             align-items: center;
             flex-direction: row;
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -43,6 +45,9 @@
             overflow: hidden;
             justify-content: center;
             height: 90%;
+        
+            
+
         }
 
         .img img {
@@ -84,12 +89,20 @@
         a{
             color: grey;
         }
+        .close{
+
+            position: absolute;
+            top: 5%; 
+            right: 3%;
+            color: grey;
+        }
     </style>
 </head>
 
 <body>
     <div class="outerdiv">
         <div class="innerdiv">
+            <div class="close">&#9587;</div>
             <div class="img">
                 <img src="shivam.jpg" />
             </div>
