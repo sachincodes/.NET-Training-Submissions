@@ -2,8 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\bin",
-    "\\Employee"
+    "\\Employee",
+    "\\Employee\\Controllers",
+    "\\Employee\\Models",
+    "\\Employee\\Static",
+    "\\Employee\\Views"
   ],
-  "SelectedNode": "\\Employee",
+  "SelectedNode": "\\Employee\\Models\\AddEmployee.cs",
   "PreviewInSolutionExplorer": false
 }
