@@ -9,13 +9,9 @@ namespace Ecommerce.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            List<ProductModel> products = new List<ProductModel>();
-
-            foreach (KeyValuePair <string, ProductModel> prod in ProductDatabase.ProductDict)
-            {
-                products.Add(prod.Value);
-            }
-            return View(products);
+            //function to display list of products
+            ProductDatabase obj = new ProductDatabase();
+            return View(obj.DisplayProducts());
         }
 
         [HttpGet]
@@ -27,7 +23,8 @@ namespace Ecommerce.Controllers
         [HttpPost]
         public IActionResult AddProduct(ProductModel model)
         {
-            ProductDatabase.ProductDict.Add(model.ProductId, model);
+            //Method to add Product
+            new ProductDatabase().AddProduct(model);
             return RedirectToAction("Index");
         }
 
@@ -40,10 +37,26 @@ namespace Ecommerce.Controllers
         [HttpGet]
         public IActionResult AddedToCart(string ProductId)
         {
-             Cart.CartItems.Add(ProductDatabase.ProductDict[ProductId]);
+            return View(ProductDatabase.ProductDict[ProductId]);
+        }
+
+        [HttpPost]
+        public IActionResult AddedToCart(ProductModel input, int ProductQuantity)
+        {
+            //Cart.CartItems.Add(ProductDatabase.ProductDict[input.ProductId]);
+            //Cart.quantity.Add(input.ProductId, ProductQuantity);
+            new Cart().AddToCart(input, ProductQuantity);
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public IActionResult RemoveItem(string ProductId)
+        {
+            //Cart.CartItems.Remove(ProductDatabase.ProductDict[ProductId]);
+            //Cart.quantity.Remove(ProductId);
+            new Cart().RemoveFromCart(ProductId);
+            return RedirectToAction("Index");
+        }
 
     }
 }

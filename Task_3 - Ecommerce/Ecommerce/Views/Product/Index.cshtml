@@ -18,6 +18,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.ProductPrice)
             </th>
+            <th>
+                @Html.DisplayName("Status")
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -36,8 +39,9 @@
             <td>
                     @if (CartItems.Contains(item))
                     {
-                        @Html.Display("Item Added")
-                        
+                        @Html.DisplayName("Item Added")
+                        <span style="margin-right: 15px"></span>
+                        @Html.ActionLink("Remove", "RemoveItem", new {ProductId = item.ProductId })
                     }
                     else
                     {
