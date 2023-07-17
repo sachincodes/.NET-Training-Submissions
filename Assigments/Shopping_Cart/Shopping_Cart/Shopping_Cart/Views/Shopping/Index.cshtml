@@ -1,0 +1,32 @@
+﻿@model CartViewModel
+
+@{
+    ViewBag.Title = "Shopping Cart";
+}
+
+<h2>Shopping Cart</h2>
+
+<table>
+    <tr>
+        <th>Product</th>
+        <th>Price</th>
+    </tr>
+    @foreach (var item in Model.products)
+    {
+        <tr>
+            <td>@item.ProductName</td>
+            <td>@item.ProductPrice.ToString("C")</td>
+        </tr>
+    }
+   
+</table>
+
+<p>Total Price: @Model.TotalPrice.ToString("C")</p>
+<p>Discounted Price: @Model.DiscountedPrice.ToString("C")</p>
+
+<h3>Add Product</h3>
+
+@{
+    Html.RenderPartial("_AddProduct", new Products());
+}
+

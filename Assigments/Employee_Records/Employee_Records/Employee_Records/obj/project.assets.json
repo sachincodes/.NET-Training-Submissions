@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\New folder\\Employee_Records\\Employee_Records\\Workers_Records.csproj",
+      "projectUniqueName": "C:\\Users\\Shrish Kumar\\Desktop\\Task\\.NET-Training-Submissions\\Assigments\\Employee_Records\\Employee_Records\\Employee_Records\\Workers_Records.csproj",
       "projectName": "Workers_Records",
-      "projectPath": "D:\\New folder\\Employee_Records\\Employee_Records\\Workers_Records.csproj",
+      "projectPath": "C:\\Users\\Shrish Kumar\\Desktop\\Task\\.NET-Training-Submissions\\Assigments\\Employee_Records\\Employee_Records\\Employee_Records\\Workers_Records.csproj",
       "packagesPath": "C:\\Users\\Shrish Kumar\\.nuget\\packages\\",
-      "outputPath": "D:\\New folder\\Employee_Records\\Employee_Records\\obj\\",
+      "outputPath": "C:\\Users\\Shrish Kumar\\Desktop\\Task\\.NET-Training-Submissions\\Assigments\\Employee_Records\\Employee_Records\\Employee_Records\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Shrish Kumar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -64,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
