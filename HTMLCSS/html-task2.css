@@ -1,0 +1,128 @@
+body {
+    background-color: #b9bfcb;
+    margin: 0;
+    padding: 0;
+}
+
+/* .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8); 
+} */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: rgba(255, 255, 255, 0.8); */
+}
+
+.item {
+    display: flex; /* Added */
+    padding: 10px;
+    margin: 10px;
+    width: 500px;
+    height: 200px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative; /* Added */
+}
+
+.image-box {
+    margin: 10px;
+    flex: 0 0 150px; /* Added */
+}
+
+.detail-box {
+    padding: 5px;
+    margin: 5px;
+    flex: 1; /* Added */
+}
+
+.item {
+    padding: 10px;
+    margin: 10px;
+    width: 500px;
+    height: 200px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.close-icon {
+    position: absolute; /* Added */
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+}
+
+.close-icon img {
+    height: 20px; /* Adjust as needed */
+    width: 20px; /* Adjust as needed */
+}
+#item-1 {
+    background-color: ghostwhite;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 3px;
+}
+
+/* .image-box {
+    margin: 10px;
+} */
+
+.img-style {
+    border-radius: 10%;
+    border: 1px solid gray;
+}
+
+/* .detail-box {
+    padding: 5px;
+    margin: 5px;
+} */
+
+.description {
+    color: black;
+    font-size: 15px;
+}
+
+.icons {
+    display: flex;
+}
+
+div.icons img {
+    border-radius: 50%;
+    margin: 10px;
+    height: 28px;
+    width: 30px;
+}
+
+.copy {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#myinput {
+    border: 0px;
+    color: gray;
+}
+
+.icon {
+    border: 0px;
+    cursor: pointer;
+    margin-left: 1px;
+}
+
+a {
+    color: gray;
+}

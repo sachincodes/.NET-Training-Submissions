@@ -1,0 +1,64 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Product";
+}
+<form asp-controller="Product" asp-action="Index" method="post">
+<div class="continer">
+    <div class="row">
+            @foreach (var item in Model.Products)
+        {
+            <div class="col-md-4 mt-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title text-success text-center fw-bold">
+                            @item.productName
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="@item.productImage" class="card-img-top" alt=".@item.productAlt" height="300" width="200" />
+
+                        <div class="d-flex justify-content-between fw-bold pt-2">
+                            @if (item.discount > 0)
+                            {
+                                <span class="badge rounded-pill bg-success  p-2">@item.discount %</span>
+                            }
+                            <span class="card-title text-success mr-1">Price<span class="card-title text-danger ">:<i class="fa-solid fa-indian-rupee-sign"></i>@item.productPrice</span></span>
+                        </div>
+
+                    </div>
+                    <div class="card-footer">
+                           
+                            <button class="btn btn-success w-100" onclick="AddCart('@item.productId'+'|'+'@item.productName'+'|'+'@item.productImage'+'|'+'@item.discount'+'|'+'@item.productPrice')" name="button"  type="button"><i class="fa-solid fa-plus me-2"></i>Add Cart</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+    function AddCart(data){
+        let cart_count = $('.cart-count').html();
+        $.ajax({
+            type: "GET",
+            url: "/Product/AddDataToSession",
+            data: { "paramValue": data },
+            success: function (result) {
+                if(result=="Success")
+                {
+                    let count = parseInt(cart_count);
+                    count = count + 1;
+                    $('.cart-count').html(count);
+                } 
+                else if(result=="A"){}
+
+                else{
+                    alert("failed");
+                }
+            }
+        })
+    }
+
+</script>
