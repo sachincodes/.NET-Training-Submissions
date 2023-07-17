@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Views",
-    "\\Views\\Employee"
+    "\\bin",
+    "\\Employee"
   ],
+  "SelectedNode": "\\Employee",
   "PreviewInSolutionExplorer": false
 }
