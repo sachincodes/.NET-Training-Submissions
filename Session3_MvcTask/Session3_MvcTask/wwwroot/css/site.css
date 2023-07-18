@@ -1,0 +1,53 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+label
+{
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    text-align: left;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+.input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+    .input-group .form-control {
+        margin-right: 5px; /* Add space between search input and select dropdown */
+    }
+    .input-group .dropdownCss{
+        width:300px;
+    }
+    .input-group .btn {
+        margin-left: 5px; /* Add space between select dropdown and search button */
+    }
+    .input-group select {
+        width: 100px; /* Adjust the width as per your preference */
+    }
+

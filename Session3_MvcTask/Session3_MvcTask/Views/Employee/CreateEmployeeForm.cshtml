@@ -1,0 +1,41 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2>Create Employee</h2>
+    <hr />
+
+    <form method="post" action="@Url.Action("CreateEmployee", "Employee")" class="text-center">
+        <div class="form-group row">
+            <label for="name" class="col-sm-5 col-md-5 col-form-label">Name:</label>
+            <div class="col-sm-7 col-md-7">
+                <input type="text" class="form-control" id="name" name="Name" required />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="department" class="col-sm-5 col-md-5 col-form-label">Department:</label>
+            <div class="col-sm-7 col-md-7">
+                <input type="text" class="form-control" id="department" name="Department" required />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="dateOfJoining" class="col-sm-5 col-md-5 col-form-label">Date of Joining:</label>
+            <div class="col-sm-7 col-md-7">
+                <input type="date" class="form-control" id="dateOfJoining" name="DateOfJoining" required />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="contactNumber" class="col-sm-5 col-md-5 col-form-label">Contact Number:</label>
+            <div class="col-sm-7 col-md-7">
+                <input type="text" class="form-control" id="contactNumber" name="ContactNumber" pattern="[0-9]+" minlength="10" maxlength="11" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                <div class="invalid-feedback">Please enter a valid contact number.</div>
+            </div>
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a href="@Url.Action("Index", "Employee")" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>

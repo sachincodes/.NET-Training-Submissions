@@ -1,0 +1,165 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var employees = Model as IEnumerable<Employee>;
+}
+
+@if (employees != null && employees.Any())
+{
+
+    <form id="searchForm" action="@Url.Action("Search", "Employee")" method="POST" onsubmit="return validateSearchForm()">
+        <div class="input-group">
+            <input type="text" id="searchInput" name="searchText" class="form-control" placeholder="Search">
+            <div class="dropdown">
+                <select id="searchBySelect" class="form-control dropdownCss" name="searchBy">
+                    <option value="">Select</option>
+
+                    <option value="name">Name</option>
+                    <option value="department">Department</option>
+                </select>
+            </div>
+            <div class="input-group-append">
+                <button type="submit" id="searchBtn" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </form>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Date of Joining</th>
+                <th>Contact Number</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in employees)
+            {
+                <tr>
+                    <td>@employee.Id</td>
+                    <td>@employee.Name</td>
+                    <td>@employee.Department</td>
+                    <td>@employee.DateOfJoining.ToShortDateString()</td>
+                    <td>@employee.ContactNumber</td>
+                    <td class="action-column">
+                        <a href="#" class="btn btn-primary editBtn" data-id="@employee.Id">Edit</a>
+                        <a href="@Url.Action("Delete", "Employee", new { id = employee.Id })" class="btn btn-danger deleteBtn" data-id="@employee.Id" onclick="return confirm('Are you sure you want to delete this employee?')">Delete</a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p id="noEmployeeMessage">No employee data is present. Please create one.</p>
+}
+
+
+<button class="btn btn-primary" onclick="location.href='@Url.Action("CreateEmployeeForm", "Employee")'">Create Employee</button>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    jQuery(document).ready(function () {
+        $("#createEmployeeBtn").click(function () {
+            $("#employeeForm").show();
+            $("#noEmployeeMessage").hide();
+        });
+
+        $("#cancelBtn").click(function () {
+            $("#employeeForm").hide();
+            $("#noEmployeeMessage").show();
+        });
+
+        $(document).on("click", ".editBtn", function () {
+            var employeeId = $(this).data("id");
+            var tableRow = $(this).closest("tr");
+            var cells = tableRow.find("td:not(:last-child)");
+            var originalValues = [];
+            cells.each(function (index) {
+                var cell = $(this);
+                if (index !== 0 && !cell.hasClass("action-column")) { 
+                    var textValue = cell.text().trim();
+                    originalValues.push(textValue);
+                    cell.html(`<input type="text" class="form-control" value="${textValue}" />`);
+                }
+            });
+            // Change Edit button to Update button
+            var updateBtn = $("<button>")
+                .text("Update")
+                .addClass("btn btn-success updateBtn")
+                .data("id", employeeId);
+
+            // Replace the Edit button with the Update button
+            $(this).replaceWith(updateBtn);
+
+            updateBtn.click(function () {
+                // Get the updated values from the input fields
+                var updatedValues = [];
+                cells.each(function () {
+                    var cell = $(this);
+                    var updatedValue = cell.find("input").val();
+                    updatedValues.push(updatedValue);
+                });
+                var data = {
+                    Id: employeeId,
+                    Name: updatedValues[1],
+                    Department: updatedValues[2],
+                    DateOfJoining:updatedValues[3],
+                    ContactNumber:updatedValues[4]
+                };
+
+
+                $.post("@Url.Action("Edit", "Employee")", data)
+                    .done(function () {
+                        // Remove the "type" attribute from the input field
+                        cells.each(function (index) {
+                            var cell = $(this);
+                            var inputValue = updatedValues[index]; 
+                            cell.html(inputValue);
+                        });
+                        // Replace the Update button with the Edit button
+                        var editBtn = $("<button>")
+                            .text("Edit")
+                            .addClass("btn btn-primary editBtn")
+                            .data("id", employeeId);
+                        // Show an alert for successful update
+                        alert("Update successful");
+
+                        updateBtn.replaceWith(editBtn);
+                    })
+                    .fail(function (xhr, status, error) {
+                        console.log(error);
+                    });
+                // Revert the table row back to its normal state
+                cells.each(function () {
+                    var cell = $(this);
+                    var inputValue = cell.find("input").val();
+                    cell.html(inputValue);
+                });
+            });
+        });
+
+    });
+    function validateSearchForm() {
+        var selectedValue = document.getElementById("searchBySelect").value;
+        var searchInput = document.getElementById("searchInput").value;
+        if (searchInput === "") {
+            alert("Please enter a search text.");
+            return false; 
+        }
+        else if (selectedValue === "") {
+            alert("Please select a search criteria.");
+            return false; 
+        }
+        return true;
+    }
+
+</script>
