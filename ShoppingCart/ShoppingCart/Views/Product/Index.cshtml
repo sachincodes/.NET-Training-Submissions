@@ -1,0 +1,104 @@
+﻿@*@model Product
+@{
+    ViewData["Title"] = "Product";
+}
+<form asp-controller="Product" asp-action="Index" method="post">
+    <div class="container">
+    <div class="row">
+        @foreach (var item in Model.Products)
+        {
+            <div class="col-md-4 mt-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title text-success text-center fw-bold">
+                            @item.productName
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="@item.productImage" class="card-img-top" alt=".@item.productAlt" height="300" width="200" />
+
+                        <div class="d-flex justify-content-between fw-bold pt-2">
+                            @if (item.discount > 0)
+                            {
+                                <span class="badge rounded-pill bg-success  p-2">@item.discount %</span>
+                            }
+                            <span class="card-title text-success mr-1">Price<span class="card-title text-danger ">:<i class="fa-solid fa-indian-rupee-sign"></i>@item.productPrice</span></span>
+                        </div>
+
+                    </div>
+                    <div class="card-footer">
+                            <button class="btn btn-success w-100" onclick="AddCart('@item.productId'+'|'+'@item.productName'+'|'+'@item.productImage'+'|'+'@item.discount'+'|'+'@item.productPrice')" name="button"  type="button"><i class="fa-solid fa-plus me-2"></i>Add Cart</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>
+</form>
+*@
+@model Product
+@{
+    ViewData["Title"] = "Product";
+}
+<div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        @{
+            int itemCount = Model.Products.Count;
+            int itemsPerSlide = 3;
+            int totalSlides = (int)Math.Ceiling((double)itemCount / itemsPerSlide);
+            for (int slide = 0; slide < totalSlides; slide++)
+            {
+                    <div class="carousel-item @(slide == 0 ? "active" : "")">
+                        <div class="container">
+                            <div class="row">
+                                @for (int i = slide * itemsPerSlide; i < Math.Min((slide + 1) * itemsPerSlide, itemCount); i++)
+                            {
+                                var item = Model.Products[i];
+                                    <div class="col-md-4 mt-4">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title text-success text-center fw-bold">
+                                                    @item.productName
+                                                </h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <img src="@item.productImage" class="card-img-top" alt=".@item.productAlt" height="300" width="200" />
+                                                <div class="d-flex justify-content-between fw-bold pt-2">
+                                                    @if (item.discount > 0)
+                                                {
+                                                        <span class="badge rounded-pill bg-success p-2">@item.discount %</span>
+                                                }
+                                                    <span class="card-title text-success mr-1">
+                                                        Price<span class="card-title text-danger">:<i class="fa-solid fa-indian-rupee-sign"></i>@item.productPrice</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <button class="btn btn-success w-100" onclick="AddCart('@item.productId'+','+'@item.productName'+','+'@item.productImage'+','+'@item.discount'+','+'@item.productPrice')" name="button" type="button">
+                                                    <i class="fa-solid fa-plus me-2"></i>Add Cart
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                            }
+                            </div>
+                        </div>
+                    </div>
+            }
+        }
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="~/js/site.js"></script>

@@ -1,0 +1,99 @@
+﻿@model ShopCart
+@{
+    ViewData["Title"] = "Cart";
+}
+@if (ViewBag.Item==null)
+{
+    <h1 class="text-danger">Item not found</h1>
+
+    <a href="@Url.Action("Index", "Product")">
+        <button class="btn btn-primary">See All Products</button>
+    </a>
+
+}
+else
+{
+    <form asp-controller="Cart" asp-action="Index" method="post">
+        <div class="continer">
+            <div class="row">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Customer Name : @Model.Customer.Name</h4>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 pt-3">
+                    @{
+                        var i = 0;
+                    }
+                    @foreach (var item in Model.CartList)
+                    {
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title text-success text-center fw-bold">
+                                    @item.ProductName
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <img src="@item.ProductImage" class="card-img-top" alt=".@item.ProductAlt" height="300" width="100" />
+
+                                <div class="d-flex justify-content-between fw-bold pt-2">
+                                    @if (item.Discount > 0)
+                                    {
+                                        <span class="badge rounded-pill bg-success  p-2">@item.Discount %</span>
+                                    }
+                                    <input type="hidden" id=disc_@i value="@item.Discount">
+                                    <input type="hidden" id=price_@i value="@item.ProductPrice">
+                                    <span class="card-title text-success mr-1">Price<span class="card-title text-danger ">:<i class="fa-solid fa-indian-rupee-sign"></i>@item.ProductPrice</span></span>
+                                </div>
+
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-between">
+                                    <button class="btn btn-rounded btn-danger btn-minus" type="button" onclick="MinProductQuantity(@i)" value="minus"><i class="fa-solid fa-minus"></i></button>
+                                    <input type="number" class="form-control w-25" min="1" id=qty_@i value=@item.Quantity readonly>
+                                    <button class="btn btn-rounded btn-success btn-plus" type="button" value="plus" onclick="AddPoductQuantity(@i)"><i class="fa-solid fa-plus"></i></button>
+                                    <button class="btn btn-danger" type="submit" value="@item.ProductId" name="button"><i class="fa-solid fa-times pr-2"></i> Remove Item</button>
+                                </div>
+                                <div class="pt-3">
+                                   
+                                    </div>
+                            </div>
+                        </div>
+                        { i++; }
+                    }
+                </div>
+                <div class="col-md-6 pt-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title text-success text-center fw-bold">
+                                Price Detail
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between fw-bold pt-2">
+                                <h5 class="p-2">Price(Total Item @Model.TotalItem)</h5>
+                                <span class="text-success mr-1 all-price">@Model.Price</span>
+                            </div>
+                            <div class="d-flex justify-content-between fw-bold pt-2">
+                                <h5 class="p-2">Save Amount</h5>
+                                <span class="text-success mr-1 save-amt">@Model.SaveAmount</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-between fw-bold pt-2">
+                                <h5 class="p-2">Total Amount :</h5>
+                                <span class="text-success mr-1 net-amt">@Model.NetAmount</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="~/js/site.js"></script>

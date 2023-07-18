@@ -1,0 +1,91 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* CSS for the header */
+
+/* CSS for the header */
+
+header {
+    padding: 20px;
+}
+
+.navbar {
+    background-color: #FFEBEE;
+}
+
+.navbar-brand {
+    color: #000;
+    font-weight: bold;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+    .navbar-brand:hover {
+        color: #FF4081;
+    }
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+    .nav-link:hover {
+        color: #FF4081;
+    }
+
+.cart-count {
+/*    background-color: #FF4081;
+    color: #FFF;
+    padding: 3px 6px;
+    border-radius: 50%;
+    font-size: 24px;
+*/    margin-left: 5px;
+}
+
+/* CSS for the main content area */
+
+.container {
+    padding: 20px;
+}
+
+/* CSS for the footer */
+
+footer {
+    border-top: 1px solid #CCC;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+}
+
+.footer a {
+    color: #999;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+    .footer a:hover {
+        color: #FF4081;
+    }
