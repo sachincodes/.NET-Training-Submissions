@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Ecommerce.Models.ProductModel>
+
+@{
+    ViewData["Title"] = "Index";
+    int Total = 0;
+}
+
+<h1>Cart</h1>
+<style>
+    .card-body, .card-header {
+        display:flex;
+        justify-content:space-between;
+    }
+</style>
+
+@foreach (var item in Model) {
+            <div class="card">
+                <div class="card-header">
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </div>
+                <div class="card-body">
+                    <div>
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.ProductPrice)</h5>
+                <p class="card-text">  @Html.DisplayFor(modelItem => item.ProductCode)</p>
+                <p class="card-text"> @Html.DisplayFor(modelItem => item.ProductType)</p>
+                    </div>
+                <div>
+                    <a href="#" class="btn btn-outline-info">
+                    <ion-icon name="trash-outline"></ion-icon>
+
+                    </a>
+                </div>
+                </div>
+            </div>
+    <br />
+        Total += (int)item.ProductPrice;
+}
+
+<div class="card">
+    <div class="card-header">
+        <div>Total Amount</div>
+       <div style="display:flex; align-items:center;">
+            <div style="margin-right:10px;">
+                <button class="btn-danger">Add Discount</button>
+            </div>
+            <div>@Total</div>
+       </div>
+    </div>
+</div>

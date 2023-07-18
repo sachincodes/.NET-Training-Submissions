@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Ecommerce.Models.ProductModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    a {
+        text-decoration: none;
+    }
+</style>
+
+<div>
+    <nav class="navbar navbar-dark" aria-label="breadcrumb">
+        <ol class="breadcrumb ">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Add Products</li>
+        </ol>
+    </nav>
+    <hr />
+   
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+               @* <th scope="col">@Html.DisplayNameFor(model => model.ProductId)</th>*@
+                <th scope="col">@Html.DisplayNameFor(model => model.ProductName)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.ProductDescription)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.ProductType)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.ProductCode)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.ProductPrice)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int i = 0;
+            }
+            @foreach (var item in Model)
+            {
+             <tr>
+                <th scope="row">@Html.DisplayName((++i).ToString())</th>
+                 @*   <td> @Html.DisplayFor(model => item.ProductId)</td>*@
+                    <td> @Html.DisplayFor(model => item.ProductName)</td>
+                    <td>@Html.DisplayFor(model => item.ProductDescription)</td>
+                    <td> @Html.DisplayFor(model => item.ProductType)</td>
+                    <td> @Html.DisplayFor(model => item.ProductCode)</td>
+                    <td> @Html.DisplayFor(model => item.ProductPrice)</td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+<br />
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

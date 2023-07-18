@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Employee\\Employee",
+    "\\Employee\\Employee\\Views",
+    "\\Employee\\Employee\\Views\\Employee"
   ],
+  "SelectedNode": "\\Employee",
   "PreviewInSolutionExplorer": false
 }

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Ecommerce.Models.ProductModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    *{
+        padding:0;
+        margin:0;
+        box-sizing: border-box;
+    }
+    .mask {
+        height: 40%;
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+    }
+    .products{
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+       
+    }
+
+    .form{
+        margin-right: 10px;
+    }
+    .bgimage {
+        width: 100%;
+        height: 500px;
+        background: url('https://images.unsplash.com/photo-1438109491414-7198515b166b?q=80&fm=jpg&s=cbdabf7a79c087a0b060670a6d79726c');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        display:flex;
+        justify-content: center;
+        align-items : center;
+    }
+
+        .bgimage h5 {
+            color: white;
+            text-shadow: 2px 2px #333;
+        }
+</style>
+<section class="bgimage">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white">
+                    <h1 class="mb-3">Shopping Cart</h1>
+                </div>
+            </div>
+        </div>
+</section>
+
+<br />
+<div class="text-center">
+    <h1 class="display-4">Products</h1>
+    
+</div>
+<div class="products">
+@foreach (var item in Model)
+{
+    <form asp-controller="Cart"  asp-action="AddToCart" method="post" asp-route-productId="@item.ProductId" class="form">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://anadi-1.myshopify.com/cdn/shop/articles/blog6.jpg?v=1531458752" alt="Card image cap">
+            <div class="card-header">
+                <h5 class="card-title"> @Html.DisplayFor(model => item.ProductName)</h5>
+            </div>
+            <div class="card-body">
+
+                <h5 class="card-title"> @Html.DisplayFor(model => item.ProductDescription)</h5>
+                <p class="card-text text-info">₹@Html.DisplayFor(model => item.ProductPrice)</p>
+                <p class="card-text">@Html.DisplayFor(model => item.ProductType)</p>
+                <input type="submit" value="Add To Cart" class="btn btn-info"/>
+            </div>
+        </div>
+    </form>
+     
+}
+</div>
