@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Shopping_Cart.Models.Product>
+@{
+    ViewData["Title"] = "Product";
+}
+<form asp-controller="Product" asp-action="Index" method="post">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 mt-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title text-center fw-bold">
+                                @item.ProductName
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <img src="@item.ProductImage" class="card-img-top" alt="@item.ProductName" height="300" width="200" />
+
+                            <div class="d-flex justify-content-between fw-bold pt-2">
+                                <span class="card-title text-success mr-1">Price<span class="card-title text-danger ">:<i class="fa-solid fa-indian-rupee-sign"></i>@item.ProductPrice</span></span>
+                            </div>
+
+                        </div>
+                        <div class="card-footer">
+                            @*<button class="btn btn-success w-100 btn-add" name="button" value='@item.productId' +'|'+'@item.productName|@item.productImage|@item.discount|@item.productPrice' type="button"><i class="fa-solid fa-plus me-2"></i>Add Cart</button>*@
+                            <button class="btn btn-primary" onclick='window.location = "@Url.Action("AddtoCart", "Shopping", new {productId=item.ProductId,productName=item.ProductName,productImage=item.ProductImage,productPrice=item.ProductPrice})";' @*onclick="AddCart('@item.ProductId'+'|'+'@item.ProductName'+'|'+'@item.ProductImage'+'|'+'@item.ProductPrice')"*@ name="button" type="button"><i class="fa-solid fa-plus me-2"></i>Add Cart</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+    function AddCart(data) {
+        let cart_count = $('.cart-count').html();
+        $.ajax({
+            type: "GET",
+            url: "/Product/AddDataToSession",
+            data: { "paramValue": data },
+            success: function (result) {
+                if (result == "Success") {
+                    let count = parseInt(cart_count);
+                    count = count + 1;
+                    $('.cart-count').html(count);
+                }
+                else if (result == "A") { }
+
+                else {
+                    alert("failed");
+                }
+            }
+        })
+    }
+
+</script>
