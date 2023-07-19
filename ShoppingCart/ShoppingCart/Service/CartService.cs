@@ -1,4 +1,5 @@
 ﻿using ShoppingCart.Models;
+using System.Reflection;
 
 namespace ShoppingCart.Service
 {
@@ -9,14 +10,14 @@ namespace ShoppingCart.Service
         {
             try
             {
-                ShopCart model = new ShopCart();
-                model.Customer.Name = "Manisha" ;
-                model.CartList = new List<CartDetail>();
+                ShopCart cart = new ShopCart();
+                cart.Customer.Name = "Manisha" ;
+                cart.CartList = new List<CartDetail>();
                 decimal totalPrice = 0;
                 decimal totalDiscount = 0;
                 decimal netAmount = 0;
 
-                foreach (var item in model.CartList)
+                foreach (var item in cart.CartList)
                 {
                     decimal discount = (item.ProductPrice * item.Discount) / 100;
                     totalDiscount += discount;
@@ -25,12 +26,12 @@ namespace ShoppingCart.Service
 
                 netAmount = totalPrice - totalDiscount;
 
-                model.TotalItem = model.CartList.Count;
-                model.SaveAmount = totalDiscount;
-                model.NetAmount = netAmount;
-                model.Price = totalPrice;
+                cart.TotalItem = cart.CartList.Count;
+                cart.SaveAmount = totalDiscount;
+                cart.NetAmount = netAmount;
+                cart.Price = totalPrice;
 
-                return model;
+                return cart;
             }
             catch (Exception ex)
             {

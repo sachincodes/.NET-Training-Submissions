@@ -28,8 +28,9 @@ namespace ShoppingCart.Service
                 productName = "Dress 1",
                 productImage = "/product/dreess1.jpg",
                 productAlt = "dress1",
-                discount = Convert.ToDecimal(5),
-                productPrice = Convert.ToDecimal(40000.00),
+                discount = 5M,
+                productPrice = 400.00M,/*'M' suffix to indicate a decimal literal*/
+
             });
             productList.Add(new ProductModel
             {
@@ -37,16 +38,16 @@ namespace ShoppingCart.Service
                 productName = "Dress 2",
                 productImage = "/product/dress2.jpg",
                 productAlt = "Dress",
-                discount = Convert.ToDecimal(4),
-                productPrice = Convert.ToDecimal(400.00),
+                discount = 4M,
+                productPrice = 400.00M,
             });
             productList.Add(new ProductModel
             {
                 productId = 3,
                 productName = "Dress 3",
                 productImage = "/product/dress3.png",
-                discount = Convert.ToDecimal(2.5),
-                productPrice = Convert.ToDecimal(1200.00),
+                discount = 2.5M,
+                productPrice = 1200.00M,
             });
            
 
@@ -56,7 +57,7 @@ namespace ShoppingCart.Service
                 productName = "Watch 1",
                 productImage = "/product/watch1.jpg",
                 productAlt = "Watch",
-                productPrice = Convert.ToDecimal(1000.00),
+                productPrice = 1100.00M,
             });
 
             productList.Add(new ProductModel
@@ -65,7 +66,7 @@ namespace ShoppingCart.Service
                 productName = "Watch 2",
                 productImage = "/product/watch2.jpg",
                 productAlt = "Watch",
-                productPrice = Convert.ToDecimal(250000.00),
+                productPrice = 2500.00M
             });
 
             productList.Add(new ProductModel
@@ -74,7 +75,7 @@ namespace ShoppingCart.Service
                 productName = "Watch 3",
                 productAlt = "Watch",
                 productImage = "/product/watch3.jpg",
-                productPrice = Convert.ToDecimal(630000)
+                productPrice = 3400M
             });
             productList.Add(new ProductModel
             {
@@ -82,7 +83,7 @@ namespace ShoppingCart.Service
                 productName = "Watch 4",
                 productAlt = "Watch",
                 productImage = "/product/watch4.jpg",
-                productPrice = Convert.ToDecimal(300000)
+                productPrice = 300.00M
             });
             return productList;
         }
