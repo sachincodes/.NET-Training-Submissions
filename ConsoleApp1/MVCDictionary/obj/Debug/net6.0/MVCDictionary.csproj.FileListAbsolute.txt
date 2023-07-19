@@ -1,0 +1,15 @@
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\MVCDictionary\bin\Debug\net6.0\MVCDictionary.exe
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\MVCDictionary\bin\Debug\net6.0\MVCDictionary.deps.json
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\MVCDictionary\bin\Debug\net6.0\MVCDictionary.runtimeconfig.json
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\MVCDictionary\bin\Debug\net6.0\MVCDictionary.dll
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\MVCDictionary\bin\Debug\net6.0\MVCDictionary.pdb
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\MVCDictionary\obj\Debug\net6.0\MVCDictionary.csproj.AssemblyReference.cache
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\MVCDictionary\obj\Debug\net6.0\MVCDictionary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\MVCDictionary\obj\Debug\net6.0\MVCDictionary.AssemblyInfoInputs.cache
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\MVCDictionary\obj\Debug\net6.0\MVCDictionary.AssemblyInfo.cs
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\MVCDictionary\obj\Debug\net6.0\MVCDictionary.csproj.CoreCompileInputs.cache
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\MVCDictionary\obj\Debug\net6.0\MVCDictionary.dll
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\MVCDictionary\obj\Debug\net6.0\refint\MVCDictionary.dll
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\MVCDictionary\obj\Debug\net6.0\MVCDictionary.pdb
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\MVCDictionary\obj\Debug\net6.0\MVCDictionary.genruntimeconfig.cache
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\MVCDictionary\obj\Debug\net6.0\ref\MVCDictionary.dll

@@ -1,0 +1,15 @@
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\ConsoleAppLinq\obj\Debug\net6.0\ConsoleAppLinq.csproj.AssemblyReference.cache
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\ConsoleAppLinq\obj\Debug\net6.0\ConsoleAppLinq.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\ConsoleAppLinq\obj\Debug\net6.0\ConsoleAppLinq.AssemblyInfoInputs.cache
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\ConsoleAppLinq\obj\Debug\net6.0\ConsoleAppLinq.AssemblyInfo.cs
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\ConsoleAppLinq\obj\Debug\net6.0\ConsoleAppLinq.csproj.CoreCompileInputs.cache
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\ConsoleAppLinq\bin\Debug\net6.0\ConsoleAppLinq.exe
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\ConsoleAppLinq\bin\Debug\net6.0\ConsoleAppLinq.deps.json
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\ConsoleAppLinq\bin\Debug\net6.0\ConsoleAppLinq.runtimeconfig.json
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\ConsoleAppLinq\bin\Debug\net6.0\ConsoleAppLinq.dll
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\ConsoleAppLinq\bin\Debug\net6.0\ConsoleAppLinq.pdb
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\ConsoleAppLinq\obj\Debug\net6.0\ConsoleAppLinq.dll
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\ConsoleAppLinq\obj\Debug\net6.0\refint\ConsoleAppLinq.dll
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\ConsoleAppLinq\obj\Debug\net6.0\ConsoleAppLinq.pdb
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\ConsoleAppLinq\obj\Debug\net6.0\ConsoleAppLinq.genruntimeconfig.cache
+C:\Users\gulsan\Desktop\TechFolks\ConsoleApp1\ConsoleAppLinq\obj\Debug\net6.0\ref\ConsoleAppLinq.dll
