@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -9,7 +9,7 @@ namespace Shopping_Cart.Controllers
 {
     public class ShoppingController : Controller
     {
-        ProductsServices products=new ProductsServices();
+        ProductsServices products = new ProductsServices();
         ShoppingCartServices shoppingCart = new ShoppingCartServices();
         ShoppingCarts shoppingCarts = new ShoppingCarts();
         List<ShoppingCartDetail> shoppingCartDetails = new List<ShoppingCartDetail>();
@@ -21,7 +21,7 @@ namespace Shopping_Cart.Controllers
             var product = products.GetAllProduct();
             return View(product);
         }
-        public ActionResult AddtoCart(int productId,string productName,string productImage,double productPrice)
+        public ActionResult AddtoCart(int productId, string productName, string productImage, double productPrice)
         {
             try
             {
@@ -66,7 +66,7 @@ namespace Shopping_Cart.Controllers
             {
                 var model = new ShoppingCarts();
                 model = GetDataFromSession();
-                return View("AddCart",model);
+                return View("AddCart", model);
             }
             catch (Exception ex)
             {
@@ -91,9 +91,14 @@ namespace Shopping_Cart.Controllers
                     model.DiscountAmount = 0;
                     model.NetAmount = model.TotalPrice;
                 }
-                
+
             }
-            ViewBag.Item = model.shoppingCartDetails.Count();
+            var count = 0;
+            foreach (var item in model.shoppingCartDetails)
+            {
+                count += item.Item;
+            }
+            ViewBag.Item = count;
             return model;
         }
         public int ItemCount()
@@ -114,6 +119,38 @@ namespace Shopping_Cart.Controllers
                 return 0;
             }
         }
-
+        public IActionResult Remove(int ProductId)
+        {
+            shoppingCarts = JsonConvert.DeserializeObject<ShoppingCarts>(HttpContext.Session.GetString("ShoppingCart"));
+            var cartDetail = shoppingCarts?.shoppingCartDetails.FindAll(x => x.ProductId == ProductId).FirstOrDefault();
+            if (cartDetail != null)
+            {
+                if (cartDetail.Item >= 2)
+                {
+                    cartDetail.Item = cartDetail.Item - 1;
+                    shoppingCarts.shoppingCartDetails.Where(x => x.ProductId == ProductId).FirstOrDefault().Item = cartDetail.Item;
+                }
+                else
+                {
+                    shoppingCarts.shoppingCartDetails.Remove(cartDetail);
+                }
+            }
+            string JsonData = JsonConvert.SerializeObject(shoppingCarts);
+            HttpContext.Session.SetString("ShoppingCart", JsonConvert.SerializeObject(shoppingCarts));
+            return RedirectToAction("GetCart");
+        }
+        public IActionResult Add(int ProductId)
+        {
+            shoppingCarts = JsonConvert.DeserializeObject<ShoppingCarts>(HttpContext.Session.GetString("ShoppingCart"));
+            var cartDetail = shoppingCarts?.shoppingCartDetails.FindAll(x => x.ProductId == ProductId).FirstOrDefault();
+            if (cartDetail != null)
+            {
+                cartDetail.Item = cartDetail.Item + 1;
+                shoppingCarts.shoppingCartDetails.Where(x => x.ProductId == ProductId).FirstOrDefault().Item = cartDetail.Item;
+            }
+            string JsonData = JsonConvert.SerializeObject(shoppingCarts);
+            HttpContext.Session.SetString("ShoppingCart", JsonConvert.SerializeObject(shoppingCarts));
+            return RedirectToAction("GetCart");
+        }
     }
 }
