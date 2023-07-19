@@ -1,0 +1,148 @@
+﻿@model CartModel
+@{
+    ViewData["Title"] = "Cart";
+}
+@if (ViewBag.Item==null)
+{
+    <h1 class="text-danger">Item not found</h1>
+}
+else
+{
+    <form asp-controller="Cart" asp-action="Index" method="post">
+        <div class="continer">
+            <div class="row">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Customer Name : @Model.customer.CustomerName</h4>
+                        <h4>Address : @Model.address.Address</h4>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 pt-3">
+                    @{
+                        var i = 0;
+                    }
+                    @foreach (var item in Model.cartList)
+                    {
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title text-dark text-center fw-bold">
+                                    @item.productName
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <img src="@item.productImage" class="card-img-top" alt=".@item.productAlt" height="300" width="100" />
+
+                                <div class="d-flex justify-content-between fw-bold pt-2">
+                                    @if (item.discount > 0)
+                                    {
+                                        <span class="badge rounded-pill bg-dark  p-2">@item.discount %</span>
+                                    }
+                                    <input type="hidden" id=disc_@i value="@item.discount">
+                                    <input type="hidden" id=price_@i value="@item.productPrice">
+                                    <span class="card-title text-dark mr-1">Price<span class="card-title text-danger ">:<i class="fa-solid fa-indian-rupee-sign"></i>@item.productPrice</span></span>
+                                </div>
+
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-between">
+                                    <button class="btn btn-rounded btn-danger btn-minus" type="button" onclick="MinusQty(@i)" value="minus"><i class="fa-solid fa-minus"></i></button>
+                                    <input type="number" class="form-control w-25" min="1" id=qty_@i value=@item.quantity readonly>
+                                    <button class="btn btn-rounded btn-success btn-plus" type="button" value="plus" onclick="AddQty(@i)"><i class="fa-solid fa-plus"></i></button>
+                                    <button class="btn btn-danger" type="submit" value="@item.productId" name="button"><i class="fa-solid fa-times pr-2"></i> Remove Item</button>
+                                </div>
+                                <div class="pt-3">
+                                   
+                                    </div>
+                            </div>
+                        </div>
+                        { i++; }
+                    }
+                </div>
+                <div class="col-md-6 pt-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title text-dark text-center fw-bold">
+                                Price Detail
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between fw-bold pt-2">
+                                <h5 class="p-2">Price(Total Item @Model.totalItem)</h5>
+                                <span class="text-dark mr-1 all-price">@Model.allPrice</span>
+                            </div>
+                            <div class="d-flex justify-content-between fw-bold pt-2">
+                                <h5 class="p-2">Save Amount</h5>
+                                <span class="text-dark mr-1 save-amt">@Model.saveAmount</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-between fw-bold pt-2">
+                                <h5 class="p-2">Total Amount :</h5>
+                                <span class="text-dark mr-1 net-amt">@Model.netAmount</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+
+    
+    function MinusQty(i)
+    {
+        var qty = parseInt($('#qty_' + i).val());
+        if(qty>1)
+        {
+            qty = qty - 1;
+            $('#qty_' + i).val(qty);
+            Calculate("minus", i);
+        }
+        
+       else{
+           alert("Quantity can not be 0");
+           return false;
+       }
+       
+    }
+    function AddQty(i) {
+        var qty = parseInt($('#qty_' + i).val());
+            qty = qty + 1;
+            $('#qty_' + i).val(qty);
+        Calculate("plus",i)
+    }
+
+
+    function Calculate(type,i){
+        var qty = parseInt($('#qty_' + i).val());
+        var discountAmt = parseInt($('#disc_' + i).val());
+        var price = parseInt($('#price_' + i).val());
+        var allPrice = parseInt($('.all-price').html());
+        var saveAmt = parseInt($('.save-amt').html());
+        var netAmt = parseInt($('.net-amt').html());
+        if (type == "plus") {
+            let disc = (price * discountAmt) / 100;
+            saveAmt = saveAmt + disc;
+            allPrice=allPrice+price;
+            netAmt = allPrice - saveAmt;
+            $('.all-price').html(allPrice.toFixed(2));
+            $('.save-amt').html(saveAmt.toFixed(2));
+            $('.net-amt').html(netAmt.toFixed(2));
+        }
+        else{
+            let disc = (price * discountAmt) / 100;
+            saveAmt = saveAmt - disc;
+            allPrice = allPrice- price;
+            netAmt = allPrice - saveAmt;
+            $('.all-price').html(allPrice.toFixed(2));
+            $('.save-amt').html(saveAmt.toFixed(2));
+            $('.net-amt').html(netAmt.toFixed(2));
+        }
+    }
+</script>
