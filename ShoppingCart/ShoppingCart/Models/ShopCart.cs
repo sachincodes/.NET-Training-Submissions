@@ -4,10 +4,10 @@
     {
         public ShopCart()
         {
-            Customer = new CustomerModel();
+            Customer = new Customer();
             CartList = new List<CartDetail>();
         }
-        public CustomerModel? Customer { get; set; }
+        public Customer? Customer { get; set; }
         public decimal Price { get; set; }
         public decimal NetAmount { get; set; }
         public decimal SaveAmount { get; set; }
