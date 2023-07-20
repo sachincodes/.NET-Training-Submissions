@@ -9,12 +9,10 @@ namespace ShoppingCart.Service
         {
             try
             {   CartModel model = new CartModel();
-                model.customer.CustomerName = "James";
+                model.customer.CustomerName = "Sadiqa";
                 model.address.Address = "Dehradun";
                 model.cartList = GetCartList();
-                var totalPrice = Convert.ToDecimal(0);
-                var totalDiscount = Convert.ToDecimal(0);
-                var netAmount = Convert.ToDecimal(0);
+                decimal totalPrice =0,totalDiscount =0, netAmount = 0 ;
                 foreach (var item in model.cartList)
                 {
                     var discount = (item.productPrice*item.discount) / 100;
@@ -30,7 +28,7 @@ namespace ShoppingCart.Service
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
         }
 
@@ -38,9 +36,7 @@ namespace ShoppingCart.Service
         {
             try
             {
-                var totalPrice = Convert.ToDecimal(0);
-                var totalDiscount = Convert.ToDecimal(0);
-                var netAmount = Convert.ToDecimal(0);
+                Decimal totalPrice = 0,totalDiscount =0,netAmount = 0;
                 foreach (var item in model.cartList)
                 {
                     var discount = (item.quantity *item.productPrice * item.discount) / 100;
@@ -56,7 +52,7 @@ namespace ShoppingCart.Service
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
         }
         private List<CartDetail> GetCartList()
@@ -65,21 +61,21 @@ namespace ShoppingCart.Service
             cartList.Add(new CartDetail
             {
                 productId = 1,
-                productName = "Android",
-                productImage = "/product/android.jpg",
-                productAlt = "Android Mobile",
-                discount = Convert.ToDecimal(5),
-                productPrice = Convert.ToDecimal(40000.00),
+                productName = "LV Luggage Bag",
+                productImage = "/product/luggage-bags.jpg",
+                productAlt = "Luggage Bag",
+                discount = decimal.Parse("5"),
+                productPrice = decimal.Parse("589000"),
                 quantity=1
             });
             cartList.Add(new CartDetail
             {
                 productId = 2,
-                productName = "Black Trouser",
-                productImage = "/product/black_trousers.png",
-                productAlt = "Black Trouser",
-                discount = Convert.ToDecimal(4),
-                productPrice = Convert.ToDecimal(400.00),
+                productName = "Sling Bag",
+                productImage = "/product/sling-bag.png",
+                productAlt = "Sling Bag",
+                discount = decimal.Parse("4"),
+                productPrice = decimal.Parse("345600"),
             });
             return cartList;
         }

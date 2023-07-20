@@ -47,8 +47,8 @@ namespace ShoppingCart.Controllers
                     modelDtl.productId = Convert.ToInt32(paramArray[0]);
                     modelDtl.productName = paramArray[1].ToString();
                     modelDtl.productImage = paramArray[2].ToString();
-                    modelDtl.discount = Convert.ToDecimal(paramArray[3]);
-                    modelDtl.productPrice = Convert.ToDecimal(paramArray[4]);
+                    modelDtl.discount = decimal.Parse(paramArray[3]);
+                    modelDtl.productPrice = decimal.Parse(paramArray[4]);
                     modelDtl.quantity = 1;
                 }
                 if (HttpContext.Session.GetString("ShoppingCart") != null)

@@ -25,81 +25,78 @@ namespace ShoppingCart.Service
             productList.Add(new ProductModel
             {
                 productId = 1,
-                productName = "Android",
-                productImage = "/product/android.jpg",
-                productAlt = "Android Mobile",
-                discount = Convert.ToDecimal(5),
-                productPrice = Convert.ToDecimal(40000.00),
+                productName = "Chanel Bag",
+                productImage = "/product/Chanel-bag.png",
+                productAlt = "Chanel Bag",
+                discount = decimal.Parse("5"),
+                productPrice = decimal.Parse("454343"),
             });
             productList.Add(new ProductModel
             {
                 productId = 2,
-                productName = "Black Trouser",
-                productImage = "/product/black_trousers.png",
-                productAlt = "Black Trouser",
-                discount = Convert.ToDecimal(4),
-                productPrice = Convert.ToDecimal(900.00),
+                productName = "Guess Tote Bag",
+                productImage = "/product/guess-Tote-bag.png",
+                productAlt = "Guess Tote Bag",
+                discount = decimal.Parse("4"),
+                productPrice = decimal.Parse("43430"),
             });
+           
             productList.Add(new ProductModel
             {
                 productId = 3,
-                productName = "Black Tshirt",
-                productImage = "/product/black_tshirt.png",
-                discount = Convert.ToDecimal(2.5),
-                productPrice = Convert.ToDecimal(1200.00),
-            });
-            productList.Add(new ProductModel
-            {
-                productId = 4,
-                productName = "Brown Pent",
-                productImage = "/product/brown_pent.jpeg",
-                productAlt = "Brown Pent",
-                discount = Convert.ToDecimal(3.5),
-                productPrice = Convert.ToDecimal(1000.00),
+                productName = "Sneakers White Violet",
+                productImage = "/product/sneakers-white-violet.png",
+                productAlt = "Sneakers White Violet",
+                discount = decimal.Parse("3"),
+                productPrice = decimal.Parse("4343460"),
             }); ;
 
             productList.Add(new ProductModel
             {
-                productId = 5,
-                productName = "IPhone",
-                productImage = "/product/iphone.png",
-                productAlt = "IPhone",
-                productPrice = Convert.ToDecimal(1000.00),
+                productId = 4,
+                productName = "IPhone 14",
+                productImage = "/product/iphone-14.png",
+                productAlt = "IPhone 14",
+                productPrice = decimal.Parse("4545545"),
             });
 
+            productList.Add(new ProductModel
+            {
+                productId = 5,
+                productName = "Chanel Bag",
+                productImage = "/product/Chanel-bag.png",
+                productAlt = "Chanel Bag",
+                discount = decimal.Parse("5"),
+                productPrice = decimal.Parse("454343"),
+            });
             productList.Add(new ProductModel
             {
                 productId = 6,
-                productName = "R 15",
-                productImage = "/product/r15.jpg",
-                productAlt = "R15",
-                productPrice = Convert.ToDecimal(250000.00),
+                productName = "Guess Tote Bag",
+                productImage = "/product/guess-Tote-bag.png",
+                productAlt = "Guess Tote Bag",
+                discount = decimal.Parse("4"),
+                productPrice = decimal.Parse("43430"),
             });
-
+          
             productList.Add(new ProductModel
             {
                 productId = 7,
-                productName = "Audi q7",
-                productAlt = "Audi q7",
-                productImage = "/product/audi_q7.jpeg",
-                productPrice = Convert.ToDecimal(5000000)
-            });
+                productName = "Sneakers White Violet",
+                productImage = "/product/sneakers-white-violet.png",
+                productAlt = "Sneakers White Violet",
+                discount = decimal.Parse("3"),
+                productPrice = decimal.Parse("4343460"),
+            }); ;
+
             productList.Add(new ProductModel
             {
                 productId = 8,
-                productName = "Audi q3",
-                productAlt = "Audi q3",
-                productImage = "/product/audiq3.jpg",
-                productPrice = Convert.ToDecimal(7000000)
-            });
-            productList.Add(new ProductModel
-            {
-                productId = 9,
-                productName = "BMW X1",
-                productAlt = "BMW X1",
-                productImage = "/product/bmwX1.jpg",
-                productPrice = Convert.ToDecimal(7000000)
-            });
+                productName = "IPhone 14",
+                productImage = "/product/iphone-14.png",
+                productAlt = "IPhone 14",
+                productPrice = decimal.Parse("4545545"),
+            }); ;
             return productList;
         }
 

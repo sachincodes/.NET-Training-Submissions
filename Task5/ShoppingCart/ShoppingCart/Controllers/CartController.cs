@@ -66,7 +66,7 @@ namespace ShoppingCart.Controllers
             if (HttpContext.Session.GetString("ShoppingCart") != null)
             {
                 model = JsonConvert.DeserializeObject<CartModel>(HttpContext.Session.GetString("ShoppingCart") ?? string.Empty);
-                model.customer.CustomerName = "James Bond"??string.Empty;
+                model.customer.CustomerName = "Sadiqa Sadaf"??string.Empty;
                 model.address.Address = "Dehradun" ?? string.Empty;
                 model = cartService.CalculatePrice(model);
                 ViewBag.Item = model.cartList.Count();
