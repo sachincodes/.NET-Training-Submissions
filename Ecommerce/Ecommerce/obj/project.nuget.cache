@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bPZYgvNqgiJSGvB+upt/1qVs8mnib39pznPPNXHbHYLNZ8apRZ8ji8Asxdz6th3IpMsNit3AVEvnP1jZKvJ2Nw==",
+  "dgSpecHash": "MENEtpKN0zjarQArXKJOm6LqDAIPSaBgSRjdpwPKctH/Qz0O6SjXq+ZaSUc61hUB8ppHeoC71wjZF+Y+7tSMoQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Simran Kaur\\Documents\\Mining\\Ecommerce\\Ecommerce\\Ecommerce.csproj",
+  "projectFilePath": "C:\\Users\\Simran Kaur\\.NET-Training-Submissions\\Ecommerce\\Ecommerce\\Ecommerce.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Simran Kaur\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Simran Kaur\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

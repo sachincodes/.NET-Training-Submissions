@@ -8,7 +8,7 @@
         public string? ProductType { get; set;}
         public string? ProductCode { get; set;}
         public int ProductPrice { get; set; } = 0;
-
+        public int Quantity { get; set; } = 1;
         public ProductModel()
         {
             ProductId = Guid.NewGuid().ToString();

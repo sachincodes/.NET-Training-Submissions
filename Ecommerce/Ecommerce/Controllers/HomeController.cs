@@ -17,10 +17,7 @@ namespace Ecommerce.Controllers
 
         public IActionResult Index()
         {
-           /* if (AddProduct.ProductData.Count == 0)
-            {
-                return View("Index");
-            }*/
+           
             List<ProductModel> products = new List<ProductModel>();
 
             foreach (KeyValuePair<string, ProductModel> product in AddProduct.ProductData)

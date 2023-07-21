@@ -1,6 +1,7 @@
 ﻿using Ecommerce.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Xml.Linq;
 using static Ecommerce.AddProduct;
 using static Ecommerce.Cart;
 
@@ -11,13 +12,13 @@ namespace Ecommerce.Controllers
         // GET: CartController
         public ActionResult Index()
         {
-            if (Cart.AddProduct.Count == 0)
+            /*if (Cart.AddProduct.Count == 0)
             {
-                return NotFound("No Products");
-            }
-            List<ProductModel> products = new List<ProductModel>();
+                return RedirectToAction("Index", "Home", new { area = "" });
+            }*/
+            List<CartModel> products = new List<CartModel>();
 
-            foreach (KeyValuePair<string, ProductModel> product in Cart.AddProduct)
+            foreach (KeyValuePair<string, CartModel> product in Cart.AddProduct)
             {
                 products.Add(product.Value);
             }
@@ -30,20 +31,31 @@ namespace Ecommerce.Controllers
             return View();
         }
 
-        // GET: CartController/Create
-/*        public IActionResult AddToCart()
-        {
-            return View();
-        }
-*/
         // POST: CartController/Create
         [HttpPost]
-        public ActionResult AddToCart(string productId)
+        public ActionResult AddToCart(string productId, int quantity)
         {
             try
             {
-                Cart.AddProduct.Add(productId, AddProduct.ProductData[productId]);
-                return RedirectToAction("Index");
+                ProductModel prod =  AddProduct.ProductData[productId];
+                CartModel obj = new CartModel();
+
+                obj.ProductId = productId;
+                obj.ProductName = prod.ProductName;
+                obj.ProductDescription = prod.ProductDescription;
+                obj.ProductPrice = prod.ProductPrice;
+                obj.Quantity = quantity;
+                obj.ProductCode = prod.ProductCode;
+                obj.ProductType = prod.ProductType;
+
+
+                if (Cart.AddProduct.ContainsKey(productId))
+                {
+                    Cart.AddProduct.Remove(productId);
+                }
+
+                Cart.AddProduct.Add(productId, obj);
+                return RedirectToAction("Index", "Home", new { area = "" });
             }
             catch
             {
@@ -73,13 +85,14 @@ namespace Ecommerce.Controllers
         }
 
         // GET: CartController/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Item(string productId)
         {
-            return View();
+            Cart.AddProduct.Remove(productId);
+            return RedirectToAction("Index");
         }
 
         // POST: CartController/Delete/5
-        [HttpPost]
+        /*[HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
         {
@@ -91,6 +104,6 @@ namespace Ecommerce.Controllers
             {
                 return View();
             }
-        }
+        }*/
     }
 }

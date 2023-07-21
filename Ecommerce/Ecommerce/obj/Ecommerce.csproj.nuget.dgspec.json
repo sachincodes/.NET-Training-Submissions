@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Simran Kaur\\Documents\\Mining\\Ecommerce\\Ecommerce\\Ecommerce.csproj": {}
+    "C:\\Users\\Simran Kaur\\.NET-Training-Submissions\\Ecommerce\\Ecommerce\\Ecommerce.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Simran Kaur\\Documents\\Mining\\Ecommerce\\Ecommerce\\Ecommerce.csproj": {
+    "C:\\Users\\Simran Kaur\\.NET-Training-Submissions\\Ecommerce\\Ecommerce\\Ecommerce.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Simran Kaur\\Documents\\Mining\\Ecommerce\\Ecommerce\\Ecommerce.csproj",
+        "projectUniqueName": "C:\\Users\\Simran Kaur\\.NET-Training-Submissions\\Ecommerce\\Ecommerce\\Ecommerce.csproj",
         "projectName": "Ecommerce",
-        "projectPath": "C:\\Users\\Simran Kaur\\Documents\\Mining\\Ecommerce\\Ecommerce\\Ecommerce.csproj",
+        "projectPath": "C:\\Users\\Simran Kaur\\.NET-Training-Submissions\\Ecommerce\\Ecommerce\\Ecommerce.csproj",
         "packagesPath": "C:\\Users\\Simran Kaur\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Simran Kaur\\Documents\\Mining\\Ecommerce\\Ecommerce\\obj\\",
+        "outputPath": "C:\\Users\\Simran Kaur\\.NET-Training-Submissions\\Ecommerce\\Ecommerce\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

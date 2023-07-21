@@ -1,8 +1,10 @@
-﻿@model IEnumerable<Ecommerce.Models.ProductModel>
+﻿@model IEnumerable<Ecommerce.Models.CartModel>
 
 @{
     ViewData["Title"] = "Index";
     int Total = 0;
+    int Quantity = 1;
+    int Q = 0;
 }
 
 <h1>Cart</h1>
@@ -14,26 +16,37 @@
 </style>
 
 @foreach (var item in Model) {
+
+    <form action="get">
+
+   
             <div class="card">
-                <div class="card-header">
+                <div class="card-header d-flex justify-content-between">
                     @Html.DisplayFor(modelItem => item.ProductName)
+                <h5 class="card-title" id="price">₹@Html.DisplayName((item.Quantity * item.ProductPrice).ToString())</h5>
+
                 </div>
                 <div class="card-body">
                     <div>
-                <h5 class="card-title">@Html.DisplayFor(modelItem => item.ProductPrice)</h5>
-                <p class="card-text">  @Html.DisplayFor(modelItem => item.ProductCode)</p>
-                <p class="card-text"> @Html.DisplayFor(modelItem => item.ProductType)</p>
+                    <h5 class="card-title" id="price"> Quantity: @Html.DisplayFor(modelItem => item.Quantity)</h5>
+                @{
+                    Total = Total + ((int)item.Quantity * (int)item.ProductPrice);
+                }
+                <p class="card-text"> Product Code: @Html.DisplayFor(modelItem => item.ProductCode)</p>
+                <p class="card-text"> Category: @Html.DisplayFor(modelItem => item.ProductType)</p>
                     </div>
                 <div>
-                    <a href="#" class="btn btn-outline-info">
+                    <a asp-action="Item" asp-controller="Cart" asp-route-productId="@item.ProductId" class="btn btn-outline-info">
                     <ion-icon name="trash-outline"></ion-icon>
 
                     </a>
                 </div>
                 </div>
             </div>
+   </form>
     <br />
-        Total += (int)item.ProductPrice;
+   
+    Q += (int)item.Quantity;
 }
 
 <div class="card">
@@ -41,9 +54,32 @@
         <div>Total Amount</div>
        <div style="display:flex; align-items:center;">
             <div style="margin-right:10px;">
-                <button class="btn-danger">Add Discount</button>
+                <button class="btn-danger" id="discount">Add Discount</button>
             </div>
-            <div>@Total</div>
+            <div id="total">₹@(Quantity)</div>
+            <div id="total">₹@(Total)</div>
        </div>
     </div>
 </div>
+@section scripts {
+    <script>
+        document.getElementById("cart-item").innerText = @Q;
+        document.getElementById("discount").addEventListener("click", function () {
+            var Total = @Total
+             if (Total <= 500) {
+                alert("Total amount is less than 500.")
+            } else if (Total > 1000) {
+                Total = Total - 500;
+                document.getElementById("total").innerText = Total;
+                document.getElementById("discount").style.display = "none";
+                alert("Discount Applied Successfully.")
+            } else if (Total > 500) {
+                Total = Total - 300;
+                document.getElementById("total").innerText = Total;
+                alert("Discount Applied Successfully.");
+                document.getElementById("discount").style.display = "none";
+            }
+        });     
+    </script>
+
+        }

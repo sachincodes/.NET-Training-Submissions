@@ -4,6 +4,6 @@ namespace Ecommerce
 {
     public class Cart
     {
-        public static Dictionary<string, ProductModel> AddProduct = new Dictionary<string, ProductModel>();
+        public static Dictionary<string, CartModel> AddProduct = new Dictionary<string, CartModel>();
     }
 }

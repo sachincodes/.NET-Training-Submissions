@@ -41,8 +41,7 @@ namespace Ecommerce.Controllers
             try
             {
                 new AddProduct().AddProducts(collection);
-               // AddProduct.ProductData.Add(collection.ProductId, collection);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home", new { area = "" });
             }
             catch
             {
