@@ -1,4 +1,5 @@
-﻿using Ecommerce.Models;
+﻿
+using Ecommerce.Models;
 
 namespace Ecommerce.Database
 {

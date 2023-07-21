@@ -6,7 +6,7 @@
 
 <h1 style="text-align : center">Product List</h1>
 
-<table class="table">
+@*<table class="table">
     <thead>
         <tr>
             <th>
@@ -39,9 +39,9 @@
             <td>
                     @if (CartItems.Contains(item))
                     {
-                        @Html.DisplayName("Item Added")
+                        @Html.ActionLink("Edit", "AddedToCart", new {ProductId = item.ProductId })
                         <span style="margin-right: 15px"></span>
-                        @Html.ActionLink("Remove", "RemoveItem", new {ProductId = item.ProductId })
+                        @Html.ActionLink("Remove", "RemoveItem", new { ProductId = item.ProductId }, new { @class = "remove-link", onclick = "return confirm('Are you sure you want to remove this item?');" })
                     }
                     else
                     {
@@ -52,3 +52,28 @@
 }
     </tbody>
 </table>
+*@
+
+<div style="display:flex; flex-wrap: wrap; justify-content: center">
+    @foreach (var item in Model)
+    {
+        <div class="card" style="width: 18rem; margin: 25px;">
+            <div class="card-body" style="display: flex; flex-direction: column; align-items: center;}">
+                <h5 class="card-title">@item.ProductName</h5>
+                <p class="card-text">@item.ProductDescription</p>
+                @if (CartItems.Contains(item))
+                {
+                    <div style="display: flex">
+                        @Html.ActionLink("Edit", "AddedToCart", new {ProductId = item.ProductId }, new { @class = "btn btn-secondary"})
+                        <span style="margin-right: 15px"></span>
+                        @Html.ActionLink("Remove", "RemoveItem", new { ProductId = item.ProductId }, new { @class = "btn btn-danger", onclick = "return confirm('Are you sure you want to remove this item?');"})
+                    </div>
+                }
+                else
+                {
+                    <span class="card-link" style="display: flex;">@Html.ActionLink("Add To Cart", "AddedToCart", new {ProductId = item.ProductId }, new { @class = "btn btn-primary"})</span>
+                }
+            </div>
+        </div>
+    }
+</div>

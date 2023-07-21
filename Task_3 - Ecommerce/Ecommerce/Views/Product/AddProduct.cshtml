@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="AddProduct">
+        <form asp-action="AddProduct" onsubmit=productadded()>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="ProductName" class="control-label"></label>
@@ -39,5 +39,16 @@
 </div>
 
 @section Scripts {
+    <script type="text/javascript">
+        function productadded() {
+            if (document.getElementById("ProductName").value.length < 1 || document.getElementById("ProductDescription").value.length < 1 || document.getElementById("ProductPrice").value.length < 1){
+                alert("Please enter all the fields");
+            }
+            else{
+            alert("Product added successfully");
+            }
+        }
+    </script>
+
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

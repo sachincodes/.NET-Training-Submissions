@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Ecommerce.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Sumit Panwar\\source\\.NET-Training-Submissions\\Task_3 - Ecommerce\\Ecommerce\\wwwroot\\cart.png",
+      "PackagePath": "staticwebassets\\cart.png"
+    },
+    {
       "Id": "C:\\Users\\Sumit Panwar\\source\\.NET-Training-Submissions\\Task_3 - Ecommerce\\Ecommerce\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Xcpfm2LmcK2HcWEf48bYSJrumN3GgIfDG8cfFI/dpHI=",
+  "Hash": "0UcNIG2/qfD0BlCIlG/9q7ApZqZLfFMLeKh6Mj11vAI=",
   "Source": "Ecommerce",
   "BasePath": "_content/Ecommerce",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Sumit Panwar\\source\\.NET-Training-Submissions\\Task_3 - Ecommerce\\Ecommerce\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Ecommerce.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Sumit Panwar\\source\\.NET-Training-Submissions\\Task_3 - Ecommerce\\Ecommerce\\wwwroot\\cart.png",
+      "SourceId": "Ecommerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Sumit Panwar\\source\\.NET-Training-Submissions\\Task_3 - Ecommerce\\Ecommerce\\wwwroot\\",
+      "BasePath": "_content/Ecommerce",
+      "RelativePath": "cart.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\cart.png"
     },
     {
       "Identity": "C:\\Users\\Sumit Panwar\\source\\.NET-Training-Submissions\\Task_3 - Ecommerce\\Ecommerce\\wwwroot\\css\\site.css",

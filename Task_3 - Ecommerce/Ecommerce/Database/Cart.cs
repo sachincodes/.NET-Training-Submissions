@@ -9,6 +9,11 @@ namespace Ecommerce.Database
 
         public void AddToCart(ProductModel input, int ProductQuantity)
         {
+            if (Cart.quantity.ContainsKey(input.ProductId))
+            {
+                Cart.quantity.Remove(input.ProductId);
+                Cart.CartItems.Remove(ProductDatabase.ProductDict[input.ProductId]);
+            }
             Cart.CartItems.Add(ProductDatabase.ProductDict[input.ProductId]);
             Cart.quantity.Add(input.ProductId, ProductQuantity);
         }

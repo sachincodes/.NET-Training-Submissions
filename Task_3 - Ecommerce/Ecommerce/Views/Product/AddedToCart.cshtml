@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="AddedToCart" method="post">
+        <form asp-action="AddedToCart" method="post" onsubmit="return validateForm()">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group" style="display: none">
                 <label asp-for="ProductId" class="control-label"></label>
@@ -34,7 +34,7 @@
             </div>
             <div class="form-group">
                 <label for="ProductQuantity" class="control-label">Quantity</label>
-                <input name="ProductQuantity" class="form-control" />
+                <input type="number" name="ProductQuantity" class="form-control" id="ProductQuantity"  required/>
                 <span class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -49,5 +49,17 @@
 </div>
 
 @section Scripts {
+    <script type="text/javascript">
+        function validateForm() {
+            if (document.getElementById("ProductQuantity").value < 1) {
+                alert("Please enter the quantity");
+                return false;
+            }
+            else {
+                alert("Product added to the cart");
+                return true;
+            }
+        }
+    </script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
