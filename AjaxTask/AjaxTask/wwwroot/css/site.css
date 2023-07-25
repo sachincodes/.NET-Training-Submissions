@@ -1,0 +1,157 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+#feed{
+    margin-left:100px;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.profile-content {
+    display: flex; /* Display the profile image and username in one line */
+    align-items: center; /* Align items vertically in the center */
+    flex-direction: row; /* Align items horizontally */
+}
+/* Styling for the post feed */
+.card {
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #c8c1c1;
+    transition: transform 0.3s ease;
+    width:450px;
+}
+
+.card-img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: cover; /* Adjust the object-fit property */
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: 100px;
+}
+.toaster {
+    display: none;
+    position: fixed;
+    top: 10px; /* Adjust the top position as needed */
+    right: 10px; /* Position the toaster at the extreme right */
+    width: 600px; /* Limit the width of the toaster */
+    background-color: #4caf50; /* Green background color */
+    color: #fff; /* Text color */
+    padding: 10px;
+    text-align: center;
+    z-index: 9999;
+    border-radius: 8px; /* Add a slight curve */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    max-width: 100%;
+    max-height: 300px; /* Adjust the height as needed */
+    object-fit: cover;
+    border-radius: 8px 8px 0 0; /* Rounded corners for top of the image */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.card-img-bottom {
+    max-width: 100%;
+    max-height: 300px; /* Adjust the height as needed */
+    object-fit: cover;
+    border-radius: 0 0 8px 8px; /* Rounded corners for bottom of the image */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+    text-transform: capitalize; /* Convert the first letter of each word to uppercase */
+    text-align: center; /* Center align the title */
+}
+
+.card-text {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+    text-align: justify; /* Justify align the paragraph text */
+}
+/* Add some color to the post feed */
+.card-header {
+    background-color: blue;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+}
+
+.post-likes {
+    color: #888;
+}
+
+/* Styling for the loading spinner */
+#loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #888;
+}
+
+    #loading i {
+        margin-right: 10px;
+        color: #888;
+    }
+
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px; /* Add spacing between the profile image and username */
+}
+
+    .profile-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+.post-content {
+    display: flex;
+    flex-direction: column;
+}
+.follow {
+    font-size: 16px;
+    color: blue;
+    margin-left: 5px;
+}
+
+

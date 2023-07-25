@@ -30,7 +30,7 @@ namespace ShoppingCart.Service
                 productAlt = "dress1",
                 discount = 5M,
                 productPrice = 400.00M,/*'M' suffix to indicate a decimal literal*/
-
+                    
             });
             productList.Add(new ProductModel
             {

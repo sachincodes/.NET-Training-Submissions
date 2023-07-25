@@ -1,0 +1,155 @@
+﻿@model List<SocialMediaPost>
+
+
+<div class="toaster" id="toaster">
+    Thank you for liking my post.
+</div>
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div id="feed">
+                @foreach (var post in Model.Take(5))
+                {
+                    <script>
+                        console.log("Post Data: ", @Json.Serialize(post));
+                    </script>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="profile-content">
+                                <div class="profile-image">
+                                    <img src="@post.ImageUrl" alt="Profile Image">
+                                </div>
+                                <h3 class="card-title">@post.Username<sup class="follow"> Follow</sup></h3>
+                            </div>
+                            <div class="post-content">
+                                <p class="card-text">@post.PostContent</p>
+                                <p class="card-text">@post.Timestamp.ToString("MMMM dd, yyyy")</p>
+                                <img src="@post.ImageUrl" alt="Post Image" class="card-img">
+                                <button class="btn btn-primary" onclick="showToaster('Thank you for &quot;liking&quot; my post')">Likes: <span id="likes_@post.Id">@post.Likes</span></button>
+@*                                <button onclick="showToaster('Thank you for &quot;liking&quot; my post')">Click me</button>
+*@
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="loading" style="display: none;">
+    <i class="fas fa-spinner fa-spin"></i> Loading...
+</div>
+
+
+
+@section scripts {
+    <script>
+        var loading = false;
+        var noOfPostInFeed = 5; 
+        var maxPostsToShow = 50;
+        var feedContainer = document.getElementById('feed');
+        var loadingDiv = document.getElementById('loading');
+        var maxImagesToLoad = 5; 
+
+        function showLoader() {
+            loadingDiv.style.display = 'block';
+            setTimeout(function () {
+                loadingDiv.style.display = 'none';
+            }, 3000); 
+        }
+
+        function showToaster(msg) {
+            var toaster = document.getElementById('toaster');
+            toaster.textContent = msg;
+            toaster.style.display = 'block';
+
+            setTimeout(function () {
+                toaster.style.display = 'none';
+            }, 3000);
+        }
+
+        function fetchMorePosts() {
+            setTimeout(function () {
+                var skipCount = noOfPostInFeed;
+                console.log("skipCount" + skipCount);
+                showLoader();
+
+                $.ajax({
+                    url: '@Url.Action("LoadMore","SocialFeed")',
+                    type: 'GET',
+                    data: { skipCount: skipCount },
+                    dataType: 'json',
+                    success: function (posts) {
+
+                        if (posts.length > 0) {
+                            var imagesLoaded = 0;
+                            var imagesToLoad = posts.slice(-maxImagesToLoad).map(function (post) {
+                                return post.imageUrl;
+                            });
+
+                            function imageLoaded() {
+                                imagesLoaded++;
+                                if (imagesLoaded === imagesToLoad.length) {
+                                    appendPostsToFeed(posts.slice(maxImagesToLoad));
+                                    noOfPostInFeed += maxImagesToLoad; 
+                                    loading = false;
+                                }
+                            }
+
+                            imagesToLoad.forEach(function (url) {
+                                var img = new Image();
+                                img.src = url;
+                                img.onload = imageLoaded;
+                            });
+
+                        } else if (noOfPostInFeed >= maxPostsToShow) {
+                            showToaster('No more posts to load.');
+                        } else {
+                            showToaster('No more posts to load.');
+                        }
+                    },
+                    error: function () {
+                        loadingDiv.style.display = 'none';
+                        loading = false;
+                    }
+                });
+            }, 1000);
+        }
+
+        function appendPostsToFeed(posts) {
+            posts.forEach(function (post) {
+                var postDiv = document.createElement('div');
+                postDiv.classList.add('card', 'mb-4');
+                //var imageClass = noOfPostInFeed < 10 ? 'card-img-top' : 'card-img-bottom';
+                postDiv.innerHTML = `
+                                        <div class="card-body">
+                                            <div class="profile-content">
+                                                <div class="profile-image">
+                                                     <img src="${post.imageUrl}" alt="Profile Image">
+                                                </div>
+                                                        <h3 class="card-title">${post.username}<sup class="follow"> Follow</sup></h3>
+                                            </div>
+                                            <div class="post-content">
+                                                <p class="card-text">${post.postContent}</p>
+                                                <p class="card-text">${new Date(post.timestamp).toLocaleDateString()}</p>
+                                                <img src="${post.imageUrl}" alt="Post Image" class="card-img">
+                                                <button class="btn btn-primary" onclick="showToaster(''Thankyou for liking my post.')">Likes: <span id="likes_${post.Id}">${post.likes}</span></button>
+                                            </div>
+                                        </div>`;
+                feedContainer.appendChild(postDiv);
+            });
+        }
+
+        window.addEventListener('scroll', function () {
+            if (!loading && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+                loading = true;
+                fetchMorePosts();
+            }
+        });
+    </script>
+}
+
+

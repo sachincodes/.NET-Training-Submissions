@@ -1,0 +1,14 @@
+﻿@model List<SocialMediaPost>
+
+@Html.Partial("_SocialFeedItems") <!-- Include the same CSS styles -->
+@foreach (var post in Model)
+{
+    <div class="card mb-4">
+        <div class="card-body">
+            <h3 class="card-title">@post.Username</h3>
+            <p class="card-text">@post.PostContent</p>
+            <p class="card-text">Likes: @post.Likes</p>
+            <p class="card-text">@post.Timestamp.ToString("MMMM dd, yyyy")</p>
+        </div>
+    </div>
+}
