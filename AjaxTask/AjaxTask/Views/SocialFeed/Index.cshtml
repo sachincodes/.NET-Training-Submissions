@@ -39,9 +39,6 @@
     </div>
 </div>
 
-<div id="loading" style="display: none;">
-    <i class="fas fa-spinner fa-spin"></i> Loading...
-</div>
 
 
 
@@ -123,7 +120,6 @@
             posts.forEach(function (post) {
                 var postDiv = document.createElement('div');
                 postDiv.classList.add('card', 'mb-4');
-                //var imageClass = noOfPostInFeed < 10 ? 'card-img-top' : 'card-img-bottom';
                 postDiv.innerHTML = `
                                         <div class="card-body">
                                             <div class="profile-content">

@@ -8,7 +8,7 @@ html {
   }
 }
 #feed{
-    margin-left:100px;
+    margin-left:120px;
 }
 html {
   position: relative;
@@ -45,6 +45,7 @@ body {
 }
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
     width: 100%;
+    max-width:1000px;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
