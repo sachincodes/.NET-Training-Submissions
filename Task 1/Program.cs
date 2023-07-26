@@ -26,7 +26,8 @@ namespace Calc
             bool flag1=true, flag2 = true;
             Console.WriteLine("Enter first number");
             string sd = Console.ReadLine();
-            bool sf= double.TryParse(sd, out a);
+            bool sf = double.TryParse(sd, out a);
+
             if( sf )
             {
 
