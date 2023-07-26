@@ -6,54 +6,6 @@
 
 <h1 style="text-align : center">Product List</h1>
 
-@*<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductDescription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductPrice)
-            </th>
-            <th>
-                @Html.DisplayName("Status")
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductPrice)
-            </td>
-            <td>
-                    @if (CartItems.Contains(item))
-                    {
-                        @Html.ActionLink("Edit", "AddedToCart", new {ProductId = item.ProductId })
-                        <span style="margin-right: 15px"></span>
-                        @Html.ActionLink("Remove", "RemoveItem", new { ProductId = item.ProductId }, new { @class = "remove-link", onclick = "return confirm('Are you sure you want to remove this item?');" })
-                    }
-                    else
-                    {
-                        @Html.ActionLink("Add To Cart", "AddedToCart", new {ProductId = item.ProductId })
-                    }
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
-*@
-
 <div style="display:flex; flex-wrap: wrap; justify-content: flex-start;">
     @foreach (var item in Model)
     {

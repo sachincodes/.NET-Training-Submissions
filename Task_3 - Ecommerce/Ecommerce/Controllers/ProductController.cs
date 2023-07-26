@@ -1,4 +1,5 @@
 ﻿using Ecommerce.Database;
+using Ecommerce.Interfaces;
 using Ecommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,7 +11,8 @@ namespace Ecommerce.Controllers
         public IActionResult Index()
         {
             //function to display list of products
-            ProductDatabase obj = new ProductDatabase();
+            DBService dBService = new DBService();
+            Product obj = dBService.GetProducts("sdsad");
             return View(obj.DisplayProducts());
         }
 

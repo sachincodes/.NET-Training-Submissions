@@ -1,0 +1,31 @@
+﻿@model IEnumerable<SocialMedia_Ajax.Models.SocialMediaPostModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="text-align: center">Posts</h1>
+
+<div id="postsdata">
+
+</div>
+
+@for(int i=0; i<5; i++)
+{
+    <div class="card" style="width: 18rem; margin : 15px 0px 15px 40%; border: 5px solid black">
+        <div class="card-body">
+            <h5 class="card-title">Post number - @Model.ElementAt(i).num</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+        </div>
+    </div>
+}
+
+@section scripts{
+    <script>
+
+    </script>
+}
+

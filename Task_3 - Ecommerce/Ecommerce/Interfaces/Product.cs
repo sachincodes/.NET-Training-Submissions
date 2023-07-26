@@ -2,7 +2,7 @@
 
 namespace Ecommerce.Interfaces
 {
-    interface Product
+    public interface Product
     {
         void AddProduct(ProductModel model);
         List<ProductModel> DisplayProducts();
