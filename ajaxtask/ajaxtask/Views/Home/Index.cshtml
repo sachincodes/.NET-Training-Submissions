@@ -1,0 +1,122 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<ajaxtask.Models.InstaFeeds>
+<style>
+    #feedpage{
+         width:100% ; 
+         box-sizing:border-box; 
+         min-height :100vh ; 
+         display :flex; 
+         flex-direction:column; 
+        align-items:center;
+        justify-content:center;
+
+
+
+    }
+
+    .feed {
+        box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+         width:400px; 
+         height:400px; 
+         display:flex;
+         flex-direction:column; 
+         margin-bottom:20px;
+      
+
+    }
+    .img{
+         width:100% ; 
+         height:80% ; 
+
+    }
+    .img img{
+           max-height:100% ; 
+           max-height:100% ; 
+          object-fit:cover;
+
+    }
+
+</style>
+<div class="text-center " id="feedpage">
+  
+   
+
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script>
+   
+    let from=0; 
+     let to=0;
+   $(document).ready(function(){
+   let prevScrollPosition=0 ;
+       function ajaxcall(){
+         from=to;
+         to+=5;
+         console.log(from) ; 
+         console.log(to) ;
+            $.ajax({
+                url: "@Url.Action("GetInstaFeeds","InstaFeeds" )",
+                data:{start:from , end:to},
+                method: 'GET',
+                success: function (data) {
+                    data.forEach((instafeed)=>{
+                        console.log(instafeed) ;
+                        var newDiv = $('<div>').css({
+                            'box-shadow': 'rgba(0, 0, 0, 0.18) 0px 2px 4px',
+                        'width': '400px',
+                        'height': '400px',
+                        'display': 'flex',
+                        'flex-direction': 'column',
+                        'margin-bottom': '20px',
+                      
+                        });
+                        var imgdiv= $('<div>').css({
+                                
+                           'width': '100%' ,
+                         'height': '80 %' 
+
+                        
+                        })
+                        var sharelikediv =$('<div>').css({
+                            'display':'flex'  ,
+                            'justify-content':'space-around'
+                        })
+                          
+                        var usernameElement = $('<p>').text('Post: ' + instafeed.post);
+                        var imageElement = $('<img>').attr('src', instafeed.image , ).addClass('img-fluid');
+                        var  ShareElement = $('<p>').text('Shares: ' + instafeed.shares);
+                    var LikeElement = $('<p>').text('Likes:'+instafeed.likes);
+                    imgdiv.append(imageElement) ;
+                    sharelikediv.append(ShareElement,LikeElement) ;
+                    newDiv.append(imgdiv,usernameElement,sharelikediv) ; 
+                    $('#feedpage').append(newDiv) ;
+
+                    })
+                },
+                error: function (error) {
+
+                }
+            })
+        }
+        ajaxcall() ; 
+
+        window.addEventListener('scroll', ()=>{
+            const scrollPosition=window.scrollY;
+            const windowHeight = window.innerHeight  ; 
+            const contentHeight= document.body.clientHeight ;
+
+            const isScrollingDown = scrollPosition>prevScrollPosition ; 
+            prevScrollPosition=scrollPosition;
+            if(isScrollingDown && contentHeight-(scrollPosition+windowHeight)<=20){
+             ajaxcall() ; 
+            }
+        })
+
+   })
+
+
+
+</script>
