@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SocialMedia-Ajax",
+    "\\SocialMedia-Ajax\\SocialMedia-Ajax",
+    "\\SocialMedia-Ajax\\SocialMedia-Ajax\\Views",
+    "\\SocialMedia-Ajax\\SocialMedia-Ajax\\Views\\Posts"
   ],
-  "SelectedNode": "\\Task_3 - Ecommerce",
+  "SelectedNode": "\\SocialMedia-Ajax\\SocialMedia-Ajax\\Views\\Posts\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }

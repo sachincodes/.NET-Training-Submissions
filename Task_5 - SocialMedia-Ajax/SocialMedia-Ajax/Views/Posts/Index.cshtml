@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="text-align: center">Posts</h1>
+
+<div id="postsdata">
+
+</div>
+
+
+@section scripts{
+    <script>
+        let pageNumber = 0;
+        const pageSize = 5;
+
+        function getHtmlTemplate(data){
+            return `<div class="card" style="width: 18rem; margin : 15px 0px 15px 40%; border: 5px solid black">
+                <div class="card-body">
+                    <h5 class="card-title">Post number - ${data.num}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>`;
+        }
+
+        function displayNextSetOfPosts() {
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("GetPosts")",
+                data: { limit: pageSize, start: pageNumber},
+                success: function (data) 
+                {
+                    if (data.length > 0) 
+                    {
+                        data.forEach(function (number) 
+                        {
+                            let html = getHtmlTemplate(number);
+                            $("#postsdata").append(html);
+                            pageNumber++;
+                        });
+                    } else 
+                    {
+                        $(window).off("scroll", onScrollUpdate);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.log(error);
+                }
+            });
+        }
+
+        function isScrollAtBottom() {
+            return $(window).scrollTop() + $(window).height() === $(document).height();
+        }
+
+        function onScrollUpdate() {
+            if (isScrollAtBottom()) {
+                displayNextSetOfPosts();
+            }
+        }
+
+        $(document).ready(function () {
+            displayNextSetOfPosts();
+            $(window).on("scroll", onScrollUpdate);
+        });
+    </script>
+}
+
