@@ -12,9 +12,9 @@ namespace ShoppingCart.Service
                 model.customer.CustomerName = "James";
                 model.address.Address = "Dehradun";
                 model.cartList = GetCartList();
-                var totalPrice = Convert.ToDecimal(0);
-                var totalDiscount = Convert.ToDecimal(0);
-                var netAmount = Convert.ToDecimal(0);
+                decimal totalPrice = 0;
+                decimal totalDiscount = 0;
+                decimal netAmount = 0;
                 foreach (var item in model.cartList)
                 {
                     var discount = (item.productPrice*item.discount) / 100;
@@ -38,14 +38,14 @@ namespace ShoppingCart.Service
         {
             try
             {
-                var totalPrice = Convert.ToDecimal(0);
-                var totalDiscount = Convert.ToDecimal(0);
-                var netAmount = Convert.ToDecimal(0);
+                decimal totalPrice =0;
+                decimal totalDiscount =0;
+                decimal netAmount =0;
                 foreach (var item in model.cartList)
                 {
                     var discount = (item.quantity *item.productPrice * item.discount) / 100;
                     totalDiscount = totalDiscount + discount;
-                    totalPrice = totalPrice + item.productPrice;
+                    totalPrice = totalPrice + item.productPrice*item.quantity;
                     netAmount = totalPrice - totalDiscount;
                 }
                 model.totalItem = model.cartList.Count();
@@ -68,8 +68,8 @@ namespace ShoppingCart.Service
                 productName = "Android",
                 productImage = "/product/android.jpg",
                 productAlt = "Android Mobile",
-                discount = Convert.ToDecimal(5),
-                productPrice = Convert.ToDecimal(40000.00),
+                discount = 5,
+                productPrice =40000.00m,
                 quantity=1
             });
             cartList.Add(new CartDetail
@@ -78,8 +78,8 @@ namespace ShoppingCart.Service
                 productName = "Black Trouser",
                 productImage = "/product/black_trousers.png",
                 productAlt = "Black Trouser",
-                discount = Convert.ToDecimal(4),
-                productPrice = Convert.ToDecimal(400.00),
+                discount =4,
+                productPrice =400.00m,
             });
             return cartList;
         }

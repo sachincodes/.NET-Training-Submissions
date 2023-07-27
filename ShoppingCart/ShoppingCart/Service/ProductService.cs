@@ -28,8 +28,8 @@ namespace ShoppingCart.Service
                 productName = "Android",
                 productImage = "/product/android.jpg",
                 productAlt = "Android Mobile",
-                discount = Convert.ToDecimal(5),
-                productPrice = Convert.ToDecimal(40000.00),
+                discount = 5,
+                productPrice = 40000.00m,
             });
             productList.Add(new ProductModel
             {
@@ -37,16 +37,16 @@ namespace ShoppingCart.Service
                 productName = "Black Trouser",
                 productImage = "/product/black_trousers.png",
                 productAlt = "Black Trouser",
-                discount = Convert.ToDecimal(4),
-                productPrice = Convert.ToDecimal(400.00),
+                discount =4,
+                productPrice = 400.00m,
             });
             productList.Add(new ProductModel
             {
                 productId = 3,
                 productName = "Black Tshirt",
                 productImage = "/product/black_tshirt.png",
-                discount = Convert.ToDecimal(2.5),
-                productPrice = Convert.ToDecimal(1200.00),
+                discount =2.5m,
+                productPrice = 1200.00m,
             });
             productList.Add(new ProductModel
             {
@@ -54,8 +54,8 @@ namespace ShoppingCart.Service
                 productName = "Brown Pent",
                 productImage = "/product/brown_pent.jpeg",
                 productAlt = "Brown Pent",
-                discount = Convert.ToDecimal(3.5),
-                productPrice = Convert.ToDecimal(1000.00),
+                discount = 3.5m,
+                productPrice = 1000.00m,
             }); ;
 
             productList.Add(new ProductModel
@@ -64,7 +64,7 @@ namespace ShoppingCart.Service
                 productName = "IPhone",
                 productImage = "/product/iphone.png",
                 productAlt = "IPhone",
-                productPrice = Convert.ToDecimal(1000.00),
+                productPrice = 1000.00m,
             });
 
             productList.Add(new ProductModel
@@ -73,7 +73,7 @@ namespace ShoppingCart.Service
                 productName = "R 15",
                 productImage = "/product/r15.jpg",
                 productAlt = "R15",
-                productPrice = Convert.ToDecimal(250000.00),
+                productPrice = 250000.00m,
             });
 
             productList.Add(new ProductModel
@@ -82,7 +82,7 @@ namespace ShoppingCart.Service
                 productName = "Audi q7",
                 productAlt = "Audi q7",
                 productImage = "/product/audi_q7.jpeg",
-                productPrice = Convert.ToDecimal(630000)
+                productPrice = 630000
             });
             productList.Add(new ProductModel
             {
@@ -90,7 +90,7 @@ namespace ShoppingCart.Service
                 productName = "Audi q3",
                 productAlt = "Audi q3",
                 productImage = "/product/audiq3.jpg",
-                productPrice = Convert.ToDecimal(300000)
+                productPrice = 300000
             });
             productList.Add(new ProductModel
             {
@@ -98,7 +98,7 @@ namespace ShoppingCart.Service
                 productName = "BMW X1",
                 productAlt = "BMW X1",
                 productImage = "/product/bmwX1.jpg",
-                productPrice = Convert.ToDecimal(10000)
+                productPrice = 10000
             });
             return productList;
         }

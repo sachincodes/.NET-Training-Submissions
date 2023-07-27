@@ -1,0 +1,12 @@
+D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Repository\bin\Debug\Repository.dll.config
+D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Repository\bin\Debug\Repository.dll
+D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Repository\bin\Debug\Repository.pdb
+D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Repository\bin\Debug\EntityFramework.dll
+D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Repository\bin\Debug\EntityFramework.SqlServer.dll
+D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Repository\bin\Debug\EntityFramework.xml
+D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Repository\bin\Debug\EntityFramework.SqlServer.xml
+D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Repository\obj\Debug\Repository2.csproj.AssemblyReference.cache
+D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Repository\obj\Debug\Repository2.csproj.CoreCompileInputs.cache
+D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Repository\obj\Debug\Repository2.csproj.CopyComplete
+D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Repository\obj\Debug\Repository.dll
+D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Repository\obj\Debug\Repository.pdb

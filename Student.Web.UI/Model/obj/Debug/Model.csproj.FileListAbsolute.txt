@@ -1,0 +1,6 @@
+D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Model\bin\Debug\Model.dll
+D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Model\bin\Debug\Model.pdb
+D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Model\obj\Debug\Model.csproj.AssemblyReference.cache
+D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Model\obj\Debug\Model.dll
+D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Model\obj\Debug\Model.pdb
