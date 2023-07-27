@@ -55,15 +55,14 @@
        function ajaxcall(){
          from=to;
          to+=5;
-         console.log(from) ; 
-         console.log(to) ;
+
             $.ajax({
                 url: "@Url.Action("GetInstaFeeds","InstaFeeds" )",
                 data:{start:from , end:to},
                 method: 'GET',
                 success: function (data) {
                     data.forEach((instafeed)=>{
-                        console.log(instafeed) ;
+ 
                         var newDiv = $('<div>').css({
                             'box-shadow': 'rgba(0, 0, 0, 0.18) 0px 2px 4px',
                         'width': '400px',
@@ -102,18 +101,32 @@
             })
         }
         ajaxcall() ; 
+      var x=true; 
+      function debounce(cb , delay=1000){
+          let timeId;
+          return function(){
+              clearTimeout(timeId) ;
+              timeId= setTimeout(cb,delay) ;
+          }
+      }
+            window.addEventListener('scroll', debounce(() => {
+                   const scrollPosition = window.scrollY;
+                    const windowHeight = window.innerHeight;
+                    const contentHeight = document.body.clientHeight;
 
-        window.addEventListener('scroll', ()=>{
-            const scrollPosition=window.scrollY;
-            const windowHeight = window.innerHeight  ; 
-            const contentHeight= document.body.clientHeight ;
+                    const isScrollingDown = scrollPosition > prevScrollPosition;
+                    prevScrollPosition = scrollPosition;
+                     if (isScrollingDown && contentHeight - (scrollPosition + windowHeight) <= 1000) {
+                        ajaxcall();
+                      
+                    }
 
-            const isScrollingDown = scrollPosition>prevScrollPosition ; 
-            prevScrollPosition=scrollPosition;
-            if(isScrollingDown && contentHeight-(scrollPosition+windowHeight)<=20){
-             ajaxcall() ; 
+            
+              
             }
-        })
+            )
+            )
+      
 
    })
 
