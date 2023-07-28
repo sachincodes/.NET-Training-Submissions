@@ -105,7 +105,8 @@
       function debounce(cb , delay=1000){
           let timeId;
           return function(){
-              clearTimeout(timeId) ;
+              clearTimeout(timeId);
+              console.log("khantwal");
               timeId= setTimeout(cb,delay) ;
           }
       }

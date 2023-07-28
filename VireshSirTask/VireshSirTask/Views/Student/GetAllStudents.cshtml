@@ -1,0 +1,63 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<style>
+   
+    *{
+        font-family: 'Alfa Slab One', cursive;
+        font-family: 'Archivo Black', sans-serif;
+        font-family: 'Asap Condensed', sans-serif;
+        font-family: 'Poppins', sans-serif;
+
+    }
+    .topdiv{
+        display:flex; 
+        flex-direction:column;
+        align-items:center; 
+        justify-content:center ; 
+        background:skyblue;
+
+    }
+    .studentdiv{
+        margin:10px; 
+        border-radius:10px; 
+        background:white;
+        width:400px; 
+        text-align:center;
+
+
+    }
+
+    .mydiv{
+        display:flex;
+        flex-direction:column;
+    }
+    .topdiv{
+        margin-top:10px;
+    }
+</style>
+@model  List<VireshSirTask.Models.ViewModel.StudentView>
+<div class="container mydiv align-items-center d-flex justify-content-center">
+<a class="btn btn-primary" href="/">Add Student</a>
+<div class="container topdiv">
+
+ 
+    <h1>List of Students</h1>
+
+ 
+
+        @foreach(var st in Model)
+        {
+            <div class="studentdiv">
+                <h4>Name: @st.StudentName</h4>
+                <h4>Course: @st.Course</h4>
+               <h4>Age: @st.Age</h4>
+                <h4>City: @st.City</h4>
+            
+            </div>
+        }
+   
+</div>
+</div>

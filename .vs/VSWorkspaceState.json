@@ -1,10 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+    "\\ajaxtask",
+    "\\ajaxtask\\ajaxtask",
+    "\\ajaxtask\\ajaxtask\\Views",
+    "\\ajaxtask\\ajaxtask\\Views\\Home",
     "\\Ecommerce",
     "\\Ecommerce\\Ecommerce",
     "\\Ecommerce\\Ecommerce\\Models",
     "\\ShivamHTML"
   ],
+  "SelectedNode": "\\ajaxtask\\ajaxtask\\Views\\Home\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }
