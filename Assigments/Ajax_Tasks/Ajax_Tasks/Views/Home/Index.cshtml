@@ -1,0 +1,63 @@
+﻿@model List<SocialFeed>
+
+
+<div id="postContainer" class="post">
+    @foreach (var post in Model)
+    {
+        <div class="post-card">
+            <h2 class="title">@post.Title</h2>
+            <p>@post.Content</p>
+            <div>
+                <img class="author-img" src="@post.Author" alt="Author">
+                <p>Author:</p>
+            </div>
+            <p class="date">Date: @post.Date.ToShortDateString()</p>
+            <button>Like</button>
+        </div>
+    }
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var skip = 5; 
+
+        function fetchMorePosts() {
+            $.ajax({
+                url: '/Home/GetMorePosts',
+                data: { skip: skip },
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.length > 0) {
+                        var postContainer = $("#postContainer");
+                        data.forEach(function (post) {
+                            var postHtml = `<div class="post-card">
+                                <h2 class="title">${post.title}</h2>
+                                    <p>${post.content}</p>
+                                <div>
+                                <img class="author-img" src =${post.author} />
+                                </div>
+                                <p class = "date">Date: ${new Date(post.date).toLocaleDateString()}</p>
+                                <button>Like</button>
+                            </div>`;
+                            postContainer.append(postHtml);
+                        });
+                        skip += 5; 
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.log(error);
+                }
+            });
+        };
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                fetchMorePosts();
+            }
+        });
+    });
+</script>
