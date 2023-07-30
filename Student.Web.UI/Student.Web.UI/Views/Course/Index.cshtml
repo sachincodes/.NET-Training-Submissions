@@ -1,0 +1,35 @@
+﻿@model List<Student.Web.UI.Models.CourseViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div class="container">
+    <div class="row">
+        <div class="table table-responsive">
+            <table class="table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Course Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var i in Model)
+                    {
+                    <tr>
+                        <td>
+                            @i.CourseId
+                        </td>
+                        <td>
+                            @i.CourseName
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+

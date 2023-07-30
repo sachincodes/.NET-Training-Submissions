@@ -1,6 +1,0 @@
-D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Service\bin\Debug\Service.dll
-D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Service\bin\Debug\Service.pdb
-D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Service\obj\Debug\Service.csproj.AssemblyReference.cache
-D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
-D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Service\obj\Debug\Service.dll
-D:\.NetTraining\Task\.NET-Training-Submissions\.NET-Training-Submissions\Student.Web.UI\Service\obj\Debug\Service.pdb

@@ -1,0 +1,32 @@
+﻿@model List<Student.Web.UI.Models.StudentViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Stuednt Id</th>
+            <th>Stuednt Name</th>
+            <th>Course Name</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.StudentId</td>
+                <td>@item.StudentName</td>
+                <td>@item.CourseName</td>
+            </tr>
+        }
+    </tbody>
+
+
+</table>
