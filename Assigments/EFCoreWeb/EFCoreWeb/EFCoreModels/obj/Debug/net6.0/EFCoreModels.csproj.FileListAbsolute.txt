@@ -1,0 +1,12 @@
+D:\New folder\EFCoreWeb\EFCoreModels\bin\Debug\net6.0\EFCoreModels.deps.json
+D:\New folder\EFCoreWeb\EFCoreModels\bin\Debug\net6.0\EFCoreModels.dll
+D:\New folder\EFCoreWeb\EFCoreModels\bin\Debug\net6.0\EFCoreModels.pdb
+D:\New folder\EFCoreWeb\EFCoreModels\obj\Debug\net6.0\EFCoreModels.csproj.AssemblyReference.cache
+D:\New folder\EFCoreWeb\EFCoreModels\obj\Debug\net6.0\EFCoreModels.GeneratedMSBuildEditorConfig.editorconfig
+D:\New folder\EFCoreWeb\EFCoreModels\obj\Debug\net6.0\EFCoreModels.AssemblyInfoInputs.cache
+D:\New folder\EFCoreWeb\EFCoreModels\obj\Debug\net6.0\EFCoreModels.AssemblyInfo.cs
+D:\New folder\EFCoreWeb\EFCoreModels\obj\Debug\net6.0\EFCoreModels.csproj.CoreCompileInputs.cache
+D:\New folder\EFCoreWeb\EFCoreModels\obj\Debug\net6.0\EFCoreModels.dll
+D:\New folder\EFCoreWeb\EFCoreModels\obj\Debug\net6.0\refint\EFCoreModels.dll
+D:\New folder\EFCoreWeb\EFCoreModels\obj\Debug\net6.0\EFCoreModels.pdb
+D:\New folder\EFCoreWeb\EFCoreModels\obj\Debug\net6.0\ref\EFCoreModels.dll

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Practice\\Ajax_Tasks\\Ajax_Tasks\\Ajax_Tasks.csproj": {}
+    "C:\\Users\\Shrish Kumar\\Desktop\\Task\\.NET-Training-Submissions\\Assigments\\Ajax_Tasks\\Ajax_Tasks\\Ajax_Tasks.csproj": {}
   },
   "projects": {
-    "E:\\Practice\\Ajax_Tasks\\Ajax_Tasks\\Ajax_Tasks.csproj": {
+    "C:\\Users\\Shrish Kumar\\Desktop\\Task\\.NET-Training-Submissions\\Assigments\\Ajax_Tasks\\Ajax_Tasks\\Ajax_Tasks.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Practice\\Ajax_Tasks\\Ajax_Tasks\\Ajax_Tasks.csproj",
+        "projectUniqueName": "C:\\Users\\Shrish Kumar\\Desktop\\Task\\.NET-Training-Submissions\\Assigments\\Ajax_Tasks\\Ajax_Tasks\\Ajax_Tasks.csproj",
         "projectName": "Ajax_Tasks",
-        "projectPath": "E:\\Practice\\Ajax_Tasks\\Ajax_Tasks\\Ajax_Tasks.csproj",
+        "projectPath": "C:\\Users\\Shrish Kumar\\Desktop\\Task\\.NET-Training-Submissions\\Assigments\\Ajax_Tasks\\Ajax_Tasks\\Ajax_Tasks.csproj",
         "packagesPath": "C:\\Users\\Shrish Kumar\\.nuget\\packages\\",
-        "outputPath": "E:\\Practice\\Ajax_Tasks\\Ajax_Tasks\\obj\\",
+        "outputPath": "C:\\Users\\Shrish Kumar\\Desktop\\Task\\.NET-Training-Submissions\\Assigments\\Ajax_Tasks\\Ajax_Tasks\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Shrish Kumar\\AppData\\Roaming\\NuGet\\NuGet.Config",

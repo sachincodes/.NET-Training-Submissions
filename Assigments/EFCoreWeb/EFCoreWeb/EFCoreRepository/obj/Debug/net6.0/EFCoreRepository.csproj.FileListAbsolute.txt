@@ -1,0 +1,15 @@
+D:\New folder\EFCoreWeb\EFCoreRepository\bin\Debug\net6.0\EFCoreRepository.deps.json
+D:\New folder\EFCoreWeb\EFCoreRepository\bin\Debug\net6.0\EFCoreRepository.dll
+D:\New folder\EFCoreWeb\EFCoreRepository\bin\Debug\net6.0\EFCoreRepository.pdb
+D:\New folder\EFCoreWeb\EFCoreRepository\bin\Debug\net6.0\EFCoreModels.dll
+D:\New folder\EFCoreWeb\EFCoreRepository\bin\Debug\net6.0\EFCoreModels.pdb
+D:\New folder\EFCoreWeb\EFCoreRepository\obj\Debug\net6.0\EFCoreRepository.csproj.AssemblyReference.cache
+D:\New folder\EFCoreWeb\EFCoreRepository\obj\Debug\net6.0\EFCoreRepository.GeneratedMSBuildEditorConfig.editorconfig
+D:\New folder\EFCoreWeb\EFCoreRepository\obj\Debug\net6.0\EFCoreRepository.AssemblyInfoInputs.cache
+D:\New folder\EFCoreWeb\EFCoreRepository\obj\Debug\net6.0\EFCoreRepository.AssemblyInfo.cs
+D:\New folder\EFCoreWeb\EFCoreRepository\obj\Debug\net6.0\EFCoreRepository.csproj.CoreCompileInputs.cache
+D:\New folder\EFCoreWeb\EFCoreRepository\obj\Debug\net6.0\EFCoreRepository.csproj.CopyComplete
+D:\New folder\EFCoreWeb\EFCoreRepository\obj\Debug\net6.0\EFCoreRepository.dll
+D:\New folder\EFCoreWeb\EFCoreRepository\obj\Debug\net6.0\refint\EFCoreRepository.dll
+D:\New folder\EFCoreWeb\EFCoreRepository\obj\Debug\net6.0\EFCoreRepository.pdb
+D:\New folder\EFCoreWeb\EFCoreRepository\obj\Debug\net6.0\ref\EFCoreRepository.dll
