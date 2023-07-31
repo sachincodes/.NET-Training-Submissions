@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Ajax";
+}
+
+<h2>Student</h2>
+
+<div id="studentInformation">
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        var skip = 0;
+        var limit = 5;
+        var loading = false;
+
+        function loadStudents() {
+            if (!loading) {
+                loading = true;
+                $.ajax({
+                    url: '@Url.Action("GetStudentData", "Student")',
+                    type: 'GET',
+                    data: { limit: limit, skip: skip },
+                    success: function (data) {
+                       // alert(JSON.stringify(data))
+                        if (data.length > 0) {
+                            var html = '';
+                            $.each(data, function (index, student) {
+                                html += '<div>';
+                                html += '<p><strong>Id:</strong> ' + student.id + '</p>';
+                                html += '<p><strong>Name:</strong> ' + student.name + '</p>';
+                                html += '<p><strong>Description:</strong> ' + student.description + '</p>';
+                                html += '</div>';
+                            });
+                            $("#studentInformation").append(html);
+                            skip += limit;
+                        }
+                        loading = false;
+                    },
+                    error: function () {
+                        loading = false;
+                        alert('Error while loading data.');
+                    }
+                });
+            }
+        }
+
+        // Load initial data
+        loadStudents();
+
+        // Load more data as user scrolls down
+        $(window).scroll(function () {
+            if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                loadStudents();
+            }
+        });
+    </script>
+
