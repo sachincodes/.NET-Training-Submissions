@@ -1,0 +1,29 @@
+﻿@model IEnumerable<StudentCourseWEB.Models.StudentModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h1 class="text-center text-primary">Students List</h1>
+            <a class="btn btn-sm btn-success m-1" asp-controller="Student" asp-action="Create">Create</a>
+            <table class="table table-bordered">
+                <tr class="text-center">
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                </tr>
+                @foreach(StudentModel student in Model)
+                {
+                    <tr class="text-center">
+                        <td>@student.StudentName</td>
+                        <td>@student.StudentAge</td>
+                        <td>@student.StudentCity</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
