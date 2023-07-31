@@ -1,27 +1,38 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StudentCourseWEB.Data;
 using StudentCourseWEB.Models;
+using StudentCourseWEB.Services;
 
 namespace StudentCourseWEB.Controllers
 {
     public class StudentController : Controller
     {
-        private readonly ApplicationContext context;
+        private readonly IStudentService _studentService;
+        private readonly ICourseService _courseService;
 
-        public StudentController(ApplicationContext context)
+        public StudentController(IStudentService studentService, ICourseService courseService)
         {
-            this.context = context;
+            _studentService = studentService;
+            _courseService = courseService;
         }
         public IActionResult Index()
         {
-            List<StudentModel> result = context.Students.ToList();
-            return View(result);
+            try
+            {
+                var result = _studentService.GetAllStudents();
+                return View(result);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage = ex.Message;
+                return View("Error");
+            }
         }
 
         [HttpGet]
         public IActionResult Create()
         {
-            List<CourseModel> courses = context.Courses.ToList();
+            var courses = _courseService.CourseList();
             ViewData["Courses"] = courses;
             return View();
         }
@@ -29,10 +40,9 @@ namespace StudentCourseWEB.Controllers
         [HttpPost]
         public IActionResult Create(StudentModel student)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                context.Students.Add(student);
-                context.SaveChanges();
+                _studentService.AddStudent(student);
             }
             else
             {
