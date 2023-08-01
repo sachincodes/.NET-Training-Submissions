@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using StudentCourseWEB.Data;
 using StudentCourseWEB.Models;
 using StudentCourseWEB.Services;
+using System;
+using System.Text.Json;
 
 namespace StudentCourseWEB.Controllers
 {
@@ -19,8 +22,17 @@ namespace StudentCourseWEB.Controllers
         {
             try
             {
-                var result = _studentService.GetAllStudents();
-                return View(result);
+                HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri("https://localhost:7030");
+                var result = client.GetAsync("api/StudentApi").Result;
+                var jsonContent = result.Content.ReadAsStringAsync().Result;
+                JsonSerializerOptions jsonSerializerOptions = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true,
+                };
+                var list = System.Text.Json.JsonSerializer.Deserialize<List<StudentModel>>(jsonContent,jsonSerializerOptions );
+
+                return View(list);
             }
             catch (Exception ex)
             {
@@ -33,6 +45,7 @@ namespace StudentCourseWEB.Controllers
         public IActionResult Create()
         {
             var courses = _courseService.CourseList();
+            ViewBag.Courses = courses;
             ViewData["Courses"] = courses;
             return View();
         }
