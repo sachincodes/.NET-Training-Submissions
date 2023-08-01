@@ -1,0 +1,20 @@
+﻿@model IEnumerable<EntityTaskModel.CourseDTO>;
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CourseId</td>
+                <td>@item.CourseName</td>
+            </tr>
+        }
+        <!-- Add more rows here if needed -->
+    </tbody>
+</table>
