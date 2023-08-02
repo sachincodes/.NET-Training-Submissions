@@ -1,0 +1,123 @@
+﻿
+<div id="feed"></div>
+
+<div id="loading" style="display: none;">
+    <p>Loading...</p>
+</div>
+
+
+@section scripts {
+    <script>
+        var isLoading = false;
+        var offset = 0; 
+        var count =5; 
+
+        function loadMorePosts() {
+            if (!isLoading) {
+                isLoading = true;
+                $('#loading').show();
+
+                $.ajax({
+                    url: '@Url.Action("LoadMorePosts", "Feed")',
+                    type: 'GET',
+                    data: { offset: offset, count: count },
+                    success: function (data) {
+                        console.log(data);
+
+                       
+                        if (Array.isArray(data)) {
+                            if (data.length > 0) {
+                                data.forEach(function (post) {
+                                    var postHtml = `
+                                                <div class="post">
+                                                    <h3>${post.title}</h3>
+                                                    <p>${post.content}</p>
+                                                    <hr />
+                                                </div>`;
+                                    $('#feed').append(postHtml);
+                                });
+                                offset += count; 
+                            }
+                        } else {
+                            console.log("Data is not an array:", data);
+                        }
+                    },
+                    complete: function () {
+                        isLoading = false;
+                        $('#loading').hide();
+                    }
+                });
+            }
+        }
+
+        function isBottomOfPage() {
+            return $(window).scrollTop() == $(document).height() - $(window).height();
+        }
+
+        $(document).ready(function () {
+            loadMorePosts();
+
+            $(window).scroll(function () {
+                if (isBottomOfPage()) {
+                    loadMorePosts();
+                }
+            });
+        });
+    </script>
+}
+
+
+
+@*@section scripts {
+    <script>
+        var isLoading = false;
+        var offset = 0; // Start fetching posts from the beginning
+        var count = 10; // Number of posts to load in each request
+
+        function loadMorePosts() {
+            if (!isLoading) {
+                isLoading = true;
+                $('#loading').show();
+
+                $.ajax({
+                    url: '@Url.Action("LoadMorePosts", "Feed")',
+                    type: 'GET',
+                    data: { offset: offset, count: count },
+                    success: function (data) {
+                        if (data.length > 0) {
+                            data.forEach(function (post) {
+                                var postHtml = `
+                                            <div class="post">
+                                                <h3>${post.title}</h3>
+                                                <p>${post.content}</p>
+                                                <hr />
+                                            </div>`;
+                                $('#feed').append(postHtml);
+                            });
+                            offset += count; // Increment the offset for the next fetch
+                        }
+                    },
+                    complete: function () {
+                        isLoading = false;
+                        $('#loading').hide();
+                    }
+                });
+            }
+        }
+
+        function isBottomOfPage() {
+            return $(window).scrollTop() == $(document).height() - $(window).height();
+        }
+
+        $(document).ready(function () {
+            loadMorePosts(); // Load initial posts on page load
+
+            $(window).scroll(function () {
+                if (isBottomOfPage()) {
+                    loadMorePosts();
+                }
+            });
+        });
+    </script>
+}*@
+

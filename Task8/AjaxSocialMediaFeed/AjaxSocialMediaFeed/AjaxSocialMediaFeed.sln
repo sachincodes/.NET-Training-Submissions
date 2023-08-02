@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AjaxSocialMediaFeed", "AjaxSocialMediaFeed\AjaxSocialMediaFeed.csproj", "{2C773D14-D138-4811-A720-8C14BE42F2B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C773D14-D138-4811-A720-8C14BE42F2B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C773D14-D138-4811-A720-8C14BE42F2B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C773D14-D138-4811-A720-8C14BE42F2B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C773D14-D138-4811-A720-8C14BE42F2B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2AA70B8F-89AC-4AF1-AEB2-5472F7F40F54}
+	EndGlobalSection
+EndGlobal
