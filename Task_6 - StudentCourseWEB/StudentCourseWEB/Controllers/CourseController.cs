@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using StudentCourseWEB.Models;
-using StudentCourseWEB.Services;
 using StudentCourseWEB.ViewModels;
 
 namespace StudentCourseWEB.Controllers
@@ -17,11 +16,19 @@ namespace StudentCourseWEB.Controllers
 
         public IActionResult Index()
         {
-            HttpResponseMessage result = _client.GetAsync("api/CourseApi").Result;
-            string jsonContent = result.Content.ReadAsStringAsync().Result;
-            var courses = JsonConvert.DeserializeObject<IEnumerable<CourseModel>>(jsonContent);
+            try
+            {
+                HttpResponseMessage result = _client.GetAsync("api/CourseApi").Result;
+                string jsonContent = result.Content.ReadAsStringAsync().Result;
+                var courses = JsonConvert.DeserializeObject<IEnumerable<CourseModel>>(jsonContent);
 
-            return View(courses);
+                return View(courses);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage = ex.Message;
+                return View("Error");
+            }
         }
         public IActionResult Create()
         {
@@ -31,14 +38,21 @@ namespace StudentCourseWEB.Controllers
         [HttpPost]
         public IActionResult Create(CourseViewModel course) 
         {
-            var result = _client.PostAsJsonAsync<CourseViewModel>("api/CourseApi",course).Result;
-            if (result.IsSuccessStatusCode)
+            try
             {
-                return RedirectToAction("Index");
-            }
+                var result = _client.PostAsJsonAsync<CourseViewModel>("api/CourseApi", course).Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Index");
+                }
 
-            TempData["error"] = "Error";
-            return View("Index");
+                throw new Exception("Error occured while adding course");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage = ex.Message;
+                return View("Error");
+            }
         }
     }
 }

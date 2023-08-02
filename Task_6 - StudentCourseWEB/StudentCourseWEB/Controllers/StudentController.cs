@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using StudentCourseWEB.Data;
 using StudentCourseWEB.Models;
-using StudentCourseWEB.Services;
 using StudentCourseWEB.ViewModels;
-using System;
-using System.Text.Json;
+
 
 namespace StudentCourseWEB.Controllers
 {
@@ -38,27 +35,42 @@ namespace StudentCourseWEB.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            HttpResponseMessage result = _client.GetAsync("api/CourseApi").Result;
-            string jsonContent = result.Content.ReadAsStringAsync().Result;
-            var courses = JsonConvert.DeserializeObject<IEnumerable<CourseModel>>(jsonContent);
+            try
+            {
+                HttpResponseMessage result = _client.GetAsync("api/CourseApi").Result;
+                string jsonContent = result.Content.ReadAsStringAsync().Result;
+                var courses = JsonConvert.DeserializeObject<IEnumerable<CourseModel>>(jsonContent);
 
-            //ViewBag.Courses = courses;
-            ViewData["Courses"] = courses;
-            return View();
+                //ViewBag.Courses = courses;
+                ViewData["Courses"] = courses;
+                return View();
+            }
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage = ex.Message;
+                return View("Error");
+            }
         }
 
         [HttpPost]
         public IActionResult Create(StudentViewModel student)
         {
-            var result = _client.PostAsJsonAsync<StudentViewModel>("api/StudentApi", student).Result;
-
-            if (result.IsSuccessStatusCode)
+            try
             {
-                return RedirectToAction("Index");
+                var result = _client.PostAsJsonAsync<StudentViewModel>("api/StudentApi", student).Result;
+
+                if (result.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Index");
+                }
+
+                throw new Exception("Error while creating student");
             }
-            
-            TempData["error"] = "Error";
-            return View("Index");
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage = ex.Message;
+                return View("Error");
+            }
         }
     }
 }
