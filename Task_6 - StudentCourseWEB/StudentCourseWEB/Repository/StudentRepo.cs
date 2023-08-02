@@ -1,5 +1,6 @@
 ﻿using StudentCourseWEB.Data;
 using StudentCourseWEB.Models;
+using StudentCourseWEB.ViewModels;
 
 namespace StudentCourseWEB.Repository
 {
@@ -12,15 +13,39 @@ namespace StudentCourseWEB.Repository
             _context = context;
         }
 
-        public void Add(StudentModel student)
+        public void Add(StudentViewModel student)
         {
-            _context.Students.Add(student);
+
+            StudentModel stud = new StudentModel()
+            {
+                StudentName = student.StudentName,
+                StudentAge = student.StudentAge,
+                StudentCity = student.StudentCity,
+                CourseId = student.CourseId,
+            };
+
+            _context.Students.Add(stud);
             _context.SaveChanges();
         }
 
-        public IEnumerable<StudentModel> GetAll()
+        public IEnumerable<StudentViewModel> GetAll()
         {
-            return _context.Students.ToList();
+            IEnumerable<StudentModel> students = _context.Students.ToList();
+
+            List<StudentViewModel> studs = new List<StudentViewModel>();
+
+            foreach (var item in students)
+            {
+                studs.Add(new StudentViewModel()
+                {
+                    StudentName = item.StudentName,
+                    StudentAge = item.StudentAge,
+                    StudentCity = item.StudentCity,
+                    CourseId = item.CourseId
+                });
+            }
+
+            return studs;
         }
     }
 }

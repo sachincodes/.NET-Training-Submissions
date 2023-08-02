@@ -1,10 +1,11 @@
 ﻿using StudentCourseWEB.Models;
+using StudentCourseWEB.ViewModels;
 
 namespace StudentCourseWEB.Services
 {
     public interface IStudentService
     {
-        IEnumerable<StudentModel> GetAllStudents();
-        void AddStudent(StudentModel student);
+        IEnumerable<StudentViewModel> GetAllStudents();
+        void AddStudent(StudentViewModel student);
     }
 }

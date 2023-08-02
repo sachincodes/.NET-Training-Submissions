@@ -1,4 +1,4 @@
-﻿@model IEnumerable<StudentCourseWEB.Models.StudentModel>
+﻿@model IEnumerable<StudentCourseWEB.ViewModels.StudentViewModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -15,7 +15,7 @@
                     <th>Age</th>
                     <th>City</th>
                 </tr>
-                @foreach(StudentModel student in Model)
+                @foreach(var student in Model)
                 {
                     <tr class="text-center">
                         <td>@student.StudentName</td>

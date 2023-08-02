@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using StudentCourseWEB.Data;
 using StudentCourseWEB.Models;
 using StudentCourseWEB.Services;
+using StudentCourseWEB.ViewModels;
 using System;
 using System.Text.Json;
 
@@ -10,27 +11,20 @@ namespace StudentCourseWEB.Controllers
 {
     public class StudentController : Controller
     {
-        private readonly IStudentService _studentService;
-        private readonly ICourseService _courseService;
 
-        public StudentController(IStudentService studentService, ICourseService courseService)
+        HttpClient _client = new HttpClient();
+
+        public StudentController()
         {
-            _studentService = studentService;
-            _courseService = courseService;
+            _client.BaseAddress = new Uri("https://localhost:7030");
         }
         public IActionResult Index()
         {
             try
             {
-                HttpClient client = new HttpClient();
-                client.BaseAddress = new Uri("https://localhost:7030");
-                var result = client.GetAsync("api/StudentApi").Result;
-                var jsonContent = result.Content.ReadAsStringAsync().Result;
-                JsonSerializerOptions jsonSerializerOptions = new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true,
-                };
-                var list = System.Text.Json.JsonSerializer.Deserialize<List<StudentModel>>(jsonContent,jsonSerializerOptions );
+                HttpResponseMessage result = _client.GetAsync("api/StudentApi").Result;
+                string jsonContent = result.Content.ReadAsStringAsync().Result;
+                var list = JsonConvert.DeserializeObject<IEnumerable<StudentViewModel>>(jsonContent);
 
                 return View(list);
             }
@@ -44,25 +38,27 @@ namespace StudentCourseWEB.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            var courses = _courseService.CourseList();
-            ViewBag.Courses = courses;
+            HttpResponseMessage result = _client.GetAsync("api/CourseApi").Result;
+            string jsonContent = result.Content.ReadAsStringAsync().Result;
+            var courses = JsonConvert.DeserializeObject<IEnumerable<CourseModel>>(jsonContent);
+
+            //ViewBag.Courses = courses;
             ViewData["Courses"] = courses;
             return View();
         }
 
         [HttpPost]
-        public IActionResult Create(StudentModel student)
+        public IActionResult Create(StudentViewModel student)
         {
-            if (ModelState.IsValid)
+            var result = _client.PostAsJsonAsync<StudentViewModel>("api/StudentApi", student).Result;
+
+            if (result.IsSuccessStatusCode)
             {
-                _studentService.AddStudent(student);
+                return RedirectToAction("Index");
             }
-            else
-            {
-                TempData["error"] = "Empty field cannot submit";
-                return View(student);
-            }
-            return RedirectToAction("Index");
+            
+            TempData["error"] = "Error";
+            return View("Index");
         }
     }
 }

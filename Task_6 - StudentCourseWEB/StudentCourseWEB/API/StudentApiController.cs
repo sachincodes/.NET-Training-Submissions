@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using StudentCourseWEB.Models;
 using StudentCourseWEB.Services;
+using StudentCourseWEB.ViewModels;
 
 namespace StudentCourseWEB.API
 {
@@ -17,11 +18,16 @@ namespace StudentCourseWEB.API
         }
 
         [HttpGet]
-        public IEnumerable<StudentModel> GetStudents()
+        public IEnumerable<StudentViewModel> GetStudents()
         {
             return _studentService.GetAllStudents();
         }
-        
+
+        [HttpPost]
+        public void AddStudent(StudentViewModel student)
+        {
+            _studentService.AddStudent(student);
+        }
 
     }
 }

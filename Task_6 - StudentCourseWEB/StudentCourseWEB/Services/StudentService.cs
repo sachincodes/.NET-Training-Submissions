@@ -1,5 +1,6 @@
 ﻿using StudentCourseWEB.Models;
 using StudentCourseWEB.Repository;
+using StudentCourseWEB.ViewModels;
 
 namespace StudentCourseWEB.Services
 {
@@ -11,12 +12,12 @@ namespace StudentCourseWEB.Services
         {
             _studentRepo = studentRepo;
         }
-        public void AddStudent(StudentModel student)
+        public void AddStudent(StudentViewModel student)
         {
             _studentRepo.Add(student);
         }
 
-        public IEnumerable<StudentModel> GetAllStudents()
+        public IEnumerable<StudentViewModel> GetAllStudents()
         {
             return _studentRepo.GetAll();
         }

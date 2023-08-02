@@ -1,10 +1,11 @@
 ﻿using StudentCourseWEB.Models;
+using StudentCourseWEB.ViewModels;
 
 namespace StudentCourseWEB.Repository
 {
     public interface IStudentRepo
     {
-        IEnumerable<StudentModel> GetAll();
-        void Add(StudentModel student);
+        IEnumerable<StudentViewModel> GetAll();
+        void Add(StudentViewModel student);
     }
 }

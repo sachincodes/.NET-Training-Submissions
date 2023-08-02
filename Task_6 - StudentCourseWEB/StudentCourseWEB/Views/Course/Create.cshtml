@@ -1,0 +1,41 @@
+﻿@model StudentCourseWEB.Models.CourseModel
+
+@{
+    ViewData["Title"] = "AddCourse";
+}
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="text-center text-primary">Add Course</h1>
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-action="Create" onsubmit="message()">
+                        <div class="mb-3">
+                            <label asp-for="CourseName"></label>
+                            <input type="text" asp-for="CourseName" class="form-control" placeholder="New course to add" required />
+                        </div>
+                        <div class="mb-3">
+                            <input type="submit" value="submit" class="btn btn-sm btn-outline-success float-end" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script>
+        function message() {
+            alert("Course added successfully");
+        }
+    </script>
+}
