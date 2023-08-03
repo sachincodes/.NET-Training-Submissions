@@ -1,0 +1,15 @@
+D:\Ui\linq-task\linq-task\bin\Debug\net6.0\linq-task.exe
+D:\Ui\linq-task\linq-task\bin\Debug\net6.0\linq-task.deps.json
+D:\Ui\linq-task\linq-task\bin\Debug\net6.0\linq-task.runtimeconfig.json
+D:\Ui\linq-task\linq-task\bin\Debug\net6.0\linq-task.dll
+D:\Ui\linq-task\linq-task\bin\Debug\net6.0\linq-task.pdb
+D:\Ui\linq-task\linq-task\obj\Debug\net6.0\linq-task.csproj.AssemblyReference.cache
+D:\Ui\linq-task\linq-task\obj\Debug\net6.0\linq-task.GeneratedMSBuildEditorConfig.editorconfig
+D:\Ui\linq-task\linq-task\obj\Debug\net6.0\linq-task.AssemblyInfoInputs.cache
+D:\Ui\linq-task\linq-task\obj\Debug\net6.0\linq-task.AssemblyInfo.cs
+D:\Ui\linq-task\linq-task\obj\Debug\net6.0\linq-task.csproj.CoreCompileInputs.cache
+D:\Ui\linq-task\linq-task\obj\Debug\net6.0\linq-task.dll
+D:\Ui\linq-task\linq-task\obj\Debug\net6.0\refint\linq-task.dll
+D:\Ui\linq-task\linq-task\obj\Debug\net6.0\linq-task.pdb
+D:\Ui\linq-task\linq-task\obj\Debug\net6.0\linq-task.genruntimeconfig.cache
+D:\Ui\linq-task\linq-task\obj\Debug\net6.0\ref\linq-task.dll
