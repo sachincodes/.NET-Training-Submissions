@@ -1,0 +1,32 @@
+﻿@model List<StudentEntity.Model.StudentModel>
+
+<h1>Admission Form</h1>
+
+@if (Model.Any())
+{
+    <h2>Students List</h2>
+    <table class="table table-bordered">
+        <tr>
+            <th>Student Name</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>Course</th>
+        </tr>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.StudentName</td>
+                <td>@student.Age</td>
+                <td>@student.City</td>
+                <td>@student.CourseName</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>No students found.</p>
+}
+<div>
+    <a @Url.Action("StudentForm","Student") class="btn btn-primary">Create Student Detail</a>
+</div>
