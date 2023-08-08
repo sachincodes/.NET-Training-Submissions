@@ -1,0 +1,30 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.text-right {
+    text-align: right;
+    background: #5662f3;
+    color: #141414;
+    font-size:20px;
+}
+.text-left {
+    text-align: left;
+    background: #1ed524;
+    color: #141414;
+    font-size: 20px;
+}

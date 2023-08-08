@@ -1,0 +1,37 @@
+﻿@model IEnumerable<AjexTask.Models.ReviewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div id="review">
+                @foreach (var item in Model)
+                {
+                    if (item.Id % 2 == 0)
+                    {
+                        <div class="card mb-4 ">
+                            <div class="card-body text-right">
+                                <div class="post-content">
+                                    <p class="card-text ">@item.Description</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="card mb-4">
+                            <div class="card-body text-left">
+                                <div class="post-content">
+                                    <p class="card-text ">@item.Description</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
