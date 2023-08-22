@@ -1,0 +1,105 @@
+using System;
+using System.Collections.Generic;
+
+// Interface for products
+public interface IProduct
+{
+    string Name { get; }
+    decimal Price { get; }
+}
+
+// Implementation of a product
+public class Product : IProduct
+{
+    public string Name { get; }
+    public decimal Price { get; }
+
+    public Product(string name, decimal price)
+    {
+        Name = name;
+        Price = price;
+    }
+}
+
+// Interface for shopping cart
+public interface IShoppingCart
+{
+    void AddItem(IProduct product);
+    decimal CalculateTotal();
+}
+
+// Implementation of a shopping cart
+public class ShoppingCart : IShoppingCart
+{
+    private List<IProduct> items;
+
+    public ShoppingCart()
+    {
+        items = new List<IProduct>();
+    }
+
+    public void AddItem(IProduct product)
+    {
+        items.Add(product);
+    }
+
+    public decimal CalculateTotal()
+    {
+        decimal total = 0;
+        foreach (IProduct item in items)
+        {
+            total += item.Price;
+        }
+        return total;
+    }
+}
+
+// Interface for discount
+public interface IDiscount
+{
+    decimal ApplyDiscount(decimal total);
+}
+
+// Implementation of a discount
+public class Discount : IDiscount
+{
+    private decimal discountPercentage;
+
+    public Discount(decimal percentage)
+    {
+        discountPercentage = percentage;
+    }
+
+    public decimal ApplyDiscount(decimal total)
+    {
+        decimal discountAmount = (discountPercentage / 100) * total;
+        return total - discountAmount;
+    }
+}
+
+// Example usage
+public class Program
+{
+    public static void Main()
+    {
+        // Create products
+        IProduct product1 = new Product("Item 1", 10.00m);
+        IProduct product2 = new Product("Item 2", 20.00m);
+
+        // Create shopping cart
+        IShoppingCart cart = new ShoppingCart();
+
+        // Add products to the shopping cart
+        cart.AddItem(product1);
+        cart.AddItem(product2);
+
+        // Calculate total without discount
+        decimal totalWithoutDiscount = cart.CalculateTotal();
+        Console.WriteLine("Total without discount: Rs" + totalWithoutDiscount);
+
+        // Apply discount to the total
+        IDiscount discount = new Discount(10); // 10% discount
+        decimal totalWithDiscount = discount.ApplyDiscount(totalWithoutDiscount);
+        Console.WriteLine("Total with discount: Rs" + totalWithDiscount);
+    }
+}
